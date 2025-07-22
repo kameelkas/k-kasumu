@@ -1,6 +1,6 @@
 # Personal Portfolio
 
-This is my developer portfolio, showcasing my projects, skills, and background. It's a modern, responsive site that doubles as my online resume and a way to contact me.
+This is my personal and developer portfolio, showcasing my projects, skills, activities and background. It's a modern, responsive site that doubles a less formal online resume and a way to contact me!
 
 ## Tech Stack
 
@@ -14,7 +14,7 @@ This is my developer portfolio, showcasing my projects, skills, and background. 
 - Projects showcase
 - Skills & technologies
 - Contact form or links
-- Dark mode *(if applicable)*
+- Dark mode (Based on Device's current mode)
 
 ## Live Link
 
