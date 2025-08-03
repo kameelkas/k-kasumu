@@ -5,7 +5,7 @@ This is my personal and developer portfolio, showcasing my projects, skills, act
 ## Tech Stack
 
 - **Frontend:** NextJS (Typescript)
-- **Styling:** Tailwind CSS, Motion 
+- **Styling:** Tailwind CSS, Motion
 - **Hosting:** Vercel
 
 ## Features
