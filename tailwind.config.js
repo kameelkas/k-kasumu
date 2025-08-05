@@ -11,20 +11,18 @@ module.exports = {
   ],
   theme: {
     extend: {
-      extend: {
-        colors: {
-          primary: {
-            light: '#1f2430',
-            dark: '#eaeefb',
-          },
-          secondary: {
-            light: '#5c6274',
-            dark: '#a6acc8',
-          },
-          accent: {
-            light: '#5f6ac7',
-            dark: '#b5baff',
-          },
+      colors: {
+        primary: {
+          light: '#1f2430',
+          dark: '#eaeefb',
+        },
+        secondary: {
+          light: '#5c6274',
+          dark: '#a6acc8',
+        },
+        accent: {
+          light: '#5f6ac7',
+          dark: '#b5baff',
         },
       },
     },
