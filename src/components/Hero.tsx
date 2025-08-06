@@ -51,13 +51,13 @@ export default function Hero() {
             alt="Logo Image (Kameel Kasumu's Initials 'KK')"
             width={500}
             height={500}
-            className="h-64 w-64 rounded-full shadow-lg lg:h-96 lg:w-96"
+            className="h-56 w-56 sm:h-64 sm:w-64 rounded-full shadow-lg lg:h-96 lg:w-96"
           />
         </div>
         <div className="text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl">Hey, I&apos;m</h1>
           <h1 className="text-6xl font-bold sm:text-8xl">Kameel!</h1>
-          <h1 className="text-xl sm:text-2xl">Aspiring Software Engineer</h1>
+          <h1 className="text-xl sm:text-2xl">Emerging Software Engineer</h1>
           <div className="mt-3 flex items-center justify-between space-x-6">
             {heroLinks.map((link) => (
               <a
