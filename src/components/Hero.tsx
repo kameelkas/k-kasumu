@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import DarkKK from '@/app/assets/dark-KK.jpeg';
-import LightKK from '@/app/assets/light-KK.jpeg';
+import DarkKK from '@/images/dark-KK.jpeg';
+import LightKK from '@/images/light-KK.jpeg';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosPaper } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
@@ -43,7 +43,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="m-2 p-2 text-primary-light dark:text-primary-dark">
+    <div>
       <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
         <div className="relative">
           <Image
@@ -51,7 +51,7 @@ export default function Hero() {
             alt="Logo Image (Kameel Kasumu's Initials 'KK')"
             width={500}
             height={500}
-            className="h-56 w-56 sm:h-64 sm:w-64 rounded-full shadow-lg lg:h-96 lg:w-96"
+            className="h-56 w-56 rounded-full shadow-lg sm:h-64 sm:w-64 lg:h-96 lg:w-96"
           />
         </div>
         <div className="text-center md:text-left">
