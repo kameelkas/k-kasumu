@@ -19,31 +19,46 @@ export default function Experience({ experiences }: ExperienceProps) {
     }
   };
   return (
-    <div className="mx-3 flex flex-col">
+    <div className="mx-auto w-full flex max-w-4xl flex-col bg-red-500">
       <h1 className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
         Experience
       </h1>
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="mb-8 flex flex-col items-center justify-center"
+          className="mb-8 flex flex-col"
         >
-          <div></div>
+          <div className="mb-4 flex flex-row items-center justify-center">
+            <div className="relative">
+              <Image
+                src={exp.logo}
+                alt={`${exp.company} Logo`}
+                width={100}
+                height={100}
+                className="h-16 w-16 shadow-lg sm:h-20 sm:w-20 md:h-24 md:w-24"
+              />
+            </div>
+            <div className="flex w-full mx-4 flex-col lg:flex-row items-start justify-between text-xl sm:text-2xl md:text-3xl">
+              <div className="flex flex-col items-start">
+                <h2 className="font-semibold">{exp.position}</h2>
+                <h2 className="italic">{exp.company}</h2>
+              </div>
+              <div>
+                <h2>{exp.duration}</h2>
+              </div>
+            </div>
+          </div>
           <button
-            className="flex w-fit flex-row items-center justify-center rounded-full bg-accent-dark px-4 py-2 text-lg hover:bg-accent-light sm:text-xl md:text-2xl dark:bg-accent-light dark:hover:bg-accent-dark"
+            className="interactive:bg-accent-light dark:interactive:bg-accent-dark flex w-fit flex-row items-center justify-center rounded-full bg-accent-dark px-3 py-1 text-lg sm:text-xl md:text-2xl dark:bg-accent-light"
             onClick={() => toggleExperienceDescription(index)}
           >
             <span>See More</span>
             <TiArrowSortedDown size={40} />
           </button>
           {active === index && (
-            <div className="text-lg sm:text-xl md:text-2xl">
-              {exp.description.map((point, idx) => (
-                <p key={idx} className="mt-2">
-                  {point}
-                </p>
-              ))}
-            </div>
+            <p className="mt-2 text-lg sm:text-xl md:text-2xl">
+              {exp.description}
+            </p>
           )}
         </div>
       ))}
