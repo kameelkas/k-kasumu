@@ -26,7 +26,7 @@ export default function Experience({ experiences }: ExperienceProps) {
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="mb-8 flex flex-col rounded-lg bg-secondary-dark p-4 shadow-lg dark:bg-secondary-light bg-opacity-50 dark:bg-opacity-50 interactive:bg-opacity-100 interactive:dark:bg-opacity-100 transform ease-in-out duration-300"
+          className="mb-8 flex transform flex-col rounded-lg bg-secondary-dark bg-opacity-50 p-4 shadow-lg duration-300 ease-in-out interactive:bg-opacity-100 dark:bg-secondary-light dark:bg-opacity-50 interactive:dark:bg-opacity-100"
         >
           <div className="mb-4 flex flex-row justify-between">
             <div className="relative mr-4 h-16 w-16 flex-shrink-0 sm:h-20 sm:w-20 lg:h-24 lg:w-24">
@@ -45,16 +45,17 @@ export default function Experience({ experiences }: ExperienceProps) {
               <span>{exp.duration}</span>
             </div>
           </div>
-          <div className='flex justify-center'>
-          <button
-            className="flex w-fit flex-row items-center justify-center rounded-full p-2 bg-primary-dark interactive:bg-accent-dark dark:bg-primary-light dark:interactive:bg-accent-light text-sm sm:text-xl md:text-2xl"
-            onClick={() => toggleExperienceDescription(index)}
-          >
-            <span className="mx-2">See More</span>
-            <TiArrowSortedDown />
-          </button></div>
+          <div className="flex justify-center">
+            <button
+              className="flex w-fit flex-row items-center justify-center rounded-full bg-primary-dark p-2 text-sm interactive:bg-accent-dark sm:text-xl md:text-2xl dark:bg-primary-light dark:interactive:bg-accent-light"
+              onClick={() => toggleExperienceDescription(index)}
+            >
+              <span className="mx-2">See More</span>
+              <TiArrowSortedDown />
+            </button>
+          </div>
           {active === index && (
-            <p className="mt-2 text-lg sm:text-xl md:text-2xl text-left sm:text-justify">
+            <p className="mt-2 text-left text-lg sm:text-justify sm:text-xl md:text-2xl">
               {exp.description}
             </p>
           )}
