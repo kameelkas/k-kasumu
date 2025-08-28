@@ -4,7 +4,7 @@ export default function About() {
       <h1 className="text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
         About Me
       </h1>
-      <div className="mt-8 max-w-4xl text-center sm:text-justify">
+      <div className="mt-8 text-center sm:text-justify">
         <p className="mt-4 text-lg sm:text-xl md:text-2xl">
           Hey! I&apos;m Kameel, a final year Software & Mechatronics Engineering
           student at the University of Calgary. I previously interned at
