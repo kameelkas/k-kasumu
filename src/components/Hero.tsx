@@ -11,7 +11,7 @@ export default function Hero() {
   const heroLinks = [
     {
       name: 'GitHub',
-      url: 'https:://github.com/kameelkas',
+      url: 'https://github.com/kameelkas',
       icon: <SiGithub size={36} />,
     },
     {

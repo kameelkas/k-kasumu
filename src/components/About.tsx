@@ -5,7 +5,7 @@ export default function About() {
         About Me
       </h1>
       <div className="mt-8 text-center sm:text-justify">
-        <p className="mt-4 text-lg sm:text-xl md:text-2xl">
+        <p className="mt-4">
           Hey! I&apos;m Kameel, a final year Software & Mechatronics Engineering
           student at the University of Calgary. I previously interned at
           Seequent as a Software Developer Intern, where I primarily worked on

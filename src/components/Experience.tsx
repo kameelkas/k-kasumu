@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
-import { ExperienceItem } from '@/app/utility/experience';
+import { ExperienceItem } from '@/app/utility/data';
 import { TiArrowSortedDown } from 'react-icons/ti';
 
 interface ExperienceProps {
@@ -26,7 +26,7 @@ export default function Experience({ experiences }: ExperienceProps) {
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="mb-8 flex transform flex-col rounded-lg bg-secondary-dark bg-opacity-50 p-4 shadow-lg duration-300 ease-in-out interactive:bg-opacity-100 dark:bg-secondary-light dark:bg-opacity-50 interactive:dark:bg-opacity-100"
+          className="mb-8 flex transform flex-col rounded-lg bg-surface-light bg-opacity-50 p-4 shadow-2xl duration-300 ease-in-out interactive:bg-opacity-100 dark:bg-surface-dark dark:bg-opacity-50 dark:interactive:bg-opacity-100"
         >
           <div className="mb-4 flex flex-row justify-between">
             <div className="relative mr-4 h-16 w-16 flex-shrink-0 sm:h-20 sm:w-20 lg:h-24 lg:w-24">
@@ -39,7 +39,7 @@ export default function Experience({ experiences }: ExperienceProps) {
                 priority={index === 0} // optional: avoids pop-in for the first item
               />
             </div>
-            <div className="ml-4 flex flex-col text-end text-lg sm:text-xl md:text-2xl">
+            <div className="ml-4 flex flex-col text-end">
               <span className="font-semibold">{exp.position}</span>
               <span className="italic">{exp.company}</span>
               <span>{exp.duration}</span>
@@ -47,7 +47,7 @@ export default function Experience({ experiences }: ExperienceProps) {
           </div>
           <div className="flex justify-center">
             <button
-              className="flex w-fit flex-row items-center justify-center rounded-full bg-primary-dark p-2 text-sm interactive:bg-accent-dark sm:text-xl md:text-2xl dark:bg-primary-light dark:interactive:bg-accent-light"
+              className="flex w-fit transform flex-row items-center justify-center rounded-full bg-accent-light p-2 text-sm text-primary-dark duration-300 ease-in-out interactive:bg-accentHover-light sm:text-xl md:text-2xl dark:bg-accent-dark dark:interactive:bg-accentHover-dark"
               onClick={() => toggleExperienceDescription(index)}
             >
               <span className="mx-2">See More</span>
@@ -55,9 +55,7 @@ export default function Experience({ experiences }: ExperienceProps) {
             </button>
           </div>
           {active === index && (
-            <p className="mt-2 text-left text-lg sm:text-justify sm:text-xl md:text-2xl">
-              {exp.description}
-            </p>
+            <p className="mt-2 text-left sm:text-justify">{exp.description}</p>
           )}
         </div>
       ))}

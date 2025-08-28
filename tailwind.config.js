@@ -13,16 +13,24 @@ export const theme = {
   extend: {
     colors: {
       primary: {
-        light: '#1f2430',
-        dark: '#eaeefb',
+        light: '#1f2430', // text on light background (almost black, cool gray)
+        dark: '#eaeefb', // text on dark background (soft near-white)
       },
       secondary: {
-        light: '#5c6274',
-        dark: '#a6acc8',
+        light: '#5c6274', // muted text in light mode
+        dark: '#a6acc8', // muted text in dark mode
       },
       accent: {
-        light: '#5f6ac7',
-        dark: '#b5baff',
+        light: '#3f51b5', // primary button in light mode
+        dark: '#4c5fd9', // primary button in dark mode (slightly muted, not neon)
+      },
+      accentHover: {
+        light: '#303f9f', // hover (darkened accent in light mode)
+        dark: '#6575e0', // hover (lightened accent in dark mode)
+      },
+      surface: {
+        light: '#f8f9fd', // card / button backgrounds in light mode
+        dark: '#252a3a', // card / button backgrounds in dark mode
       },
     },
   },
