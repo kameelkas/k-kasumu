@@ -26,7 +26,7 @@ export default function Experience({ experiences }: ExperienceProps) {
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="mb-8 flex flex-col rounded-lg bg-secondary-dark p-4 shadow-lg dark:bg-secondary-light"
+          className="mb-8 flex flex-col rounded-lg bg-secondary-dark p-4 shadow-lg dark:bg-secondary-light bg-opacity-50 dark:bg-opacity-50 interactive:bg-opacity-100 interactive:dark:bg-opacity-100 transform ease-in-out duration-300"
         >
           <div className="mb-4 flex flex-row justify-between">
             <div className="relative mr-4 h-16 w-16 flex-shrink-0 sm:h-20 sm:w-20 lg:h-24 lg:w-24">

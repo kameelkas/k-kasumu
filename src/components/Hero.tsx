@@ -65,7 +65,7 @@ export default function Hero() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-light hover:text-accent-light dark:text-primary-dark dark:hover:text-accent-dark"
+                className="text-primary-light interactive:text-accent-light dark:text-primary-dark dark:interactive:text-accent-dark transform ease-in-out duration-300 interactive:scale-125"
               >
                 {link.icon}
               </a>
