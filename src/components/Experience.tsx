@@ -47,7 +47,7 @@ export default function Experience({ experiences }: ExperienceProps) {
           </div>
           <div className="flex justify-center">
             <button
-              className="flex w-fit transform flex-row items-center justify-center rounded-full bg-accent-light p-2 text-sm text-primary-dark duration-300 ease-in-out interactive:bg-accentHover-light sm:text-xl md:text-2xl dark:bg-accent-dark dark:interactive:bg-accentHover-dark"
+              className="flex w-fit transform bg-opacity-50 dark:bg-opacity-50 flex-row items-center justify-center rounded-full bg-accent-light p-2 text-sm text-primary-dark duration-300 ease-in-out interactive:bg-accentHover-light sm:text-xl md:text-2xl dark:bg-accent-dark dark:interactive:bg-accentHover-dark"
               onClick={() => toggleExperienceDescription(index)}
             >
               <span className="mx-2">See More</span>
