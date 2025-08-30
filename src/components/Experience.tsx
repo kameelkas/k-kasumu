@@ -26,7 +26,7 @@ export default function Experience({ experiences }: ExperienceProps) {
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="mb-8 flex transform flex-col rounded-lg bg-surface-light bg-opacity-50 p-4 shadow-2xl duration-300 ease-in-out interactive:bg-opacity-100 dark:bg-surface-dark dark:bg-opacity-50 dark:interactive:bg-opacity-100"
+          className="mb-8 flex transform flex-col rounded-lg bg-surface-light p-4 shadow-2xl duration-300 ease-in-out dark:bg-surface-dark"
         >
           <div className="mb-4 flex flex-row justify-between">
             <div className="relative mr-4 h-16 w-16 flex-shrink-0 sm:h-20 sm:w-20 lg:h-24 lg:w-24">
@@ -47,11 +47,11 @@ export default function Experience({ experiences }: ExperienceProps) {
           </div>
           <div className="flex justify-center">
             <button
-              className="flex w-fit transform bg-opacity-50 dark:bg-opacity-50 flex-row items-center justify-center rounded-full bg-accent-light p-2 text-sm text-primary-dark duration-300 ease-in-out interactive:bg-accentHover-light sm:text-xl md:text-2xl dark:bg-accent-dark dark:interactive:bg-accentHover-dark"
+              className="flex w-fit transform flex-row items-center justify-center rounded-full bg-accent-light p-2 text-sm duration-300 ease-in-out interactive:bg-accentHover-light sm:text-xl md:text-2xl dark:bg-accent-dark dark:interactive:bg-accentHover-dark"
               onClick={() => toggleExperienceDescription(index)}
             >
-              <span className="mx-2">See More</span>
               <TiArrowSortedDown />
+              <span className="mx-2">See More</span>
             </button>
           </div>
           {active === index && (

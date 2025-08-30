@@ -1,6 +1,6 @@
-import SeequentLogo from '@/images/seequent.png';
-import PAOFashionzImage from '@/images/paofashionz.png';
-import UnityImage from '@/images/unity.png';
+import SeequentLogo from '@/assets/images/seequent.png';
+import PAOFashionzImage from '@/assets/images/paofashionz.png';
+import UnityImage from '@/assets/images/unity.png';
 import { StaticImageData } from 'next/image';
 
 export interface ExperienceItem {

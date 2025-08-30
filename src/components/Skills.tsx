@@ -7,10 +7,10 @@ export interface SkillsProps {
 export default function Skills({ skills }: SkillsProps) {
   return (
     <div>
-      <h1 className="text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
+      <h1 className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
         Skills
       </h1>
-      <div className="mt-8 flex flex-wrap justify-center gap-4 text-center">
+      <div className="flex flex-wrap justify-center gap-4 text-center">
         {skills.languages.map((language, index) => (
           <span
             key={index}

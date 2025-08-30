@@ -1,11 +1,11 @@
 export default function About() {
   return (
     <div>
-      <h1 className="text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
+      <h1 className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
         About Me
       </h1>
-      <div className="mt-8 text-center sm:text-justify">
-        <p className="mt-4">
+      <div className="text-center sm:text-justify">
+        <p>
           Hey! I&apos;m Kameel, a final year Software & Mechatronics Engineering
           student at the University of Calgary. I previously interned at
           Seequent as a Software Developer Intern, where I primarily worked on

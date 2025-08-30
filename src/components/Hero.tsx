@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import DarkKK from '@/images/dark-KK.jpeg';
-import LightKK from '@/images/light-KK.jpeg';
+import DarkKK from '@/assets/images/dark-KK.jpeg';
+import LightKK from '@/assets/images/light-KK.jpeg';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosPaper } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
