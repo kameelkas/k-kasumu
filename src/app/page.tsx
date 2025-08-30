@@ -5,6 +5,7 @@ import Experience from '@/components/Experience';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import Contact from '@/components/Contact';
+import Footer from '@/components/Footer';
 import { experienceData, skillsData, projectData } from './utility/data';
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <section id='contact' className="my-16 w-full max-w-5xl">
         <Contact />
       </section>
+      <Footer />
     </div>
   );
 }
