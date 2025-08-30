@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
-import DarkKK from '@/assets/images/dark-KK.jpeg';
-import LightKK from '@/assets/images/light-KK.jpeg';
+import DarkKK from '@/images/dark-KK.jpeg';
+import LightKK from '@/images/light-KK.jpeg';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosPaper } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
@@ -21,13 +21,8 @@ export default function Hero() {
     },
     {
       name: 'Resume',
-      url: '#',
+      url: "/Kameel Kasumu Resume '25.pdf",
       icon: <IoIosPaper size={36} />,
-    },
-    {
-      name: 'Email',
-      url: 'mailto:kameelkas@gmail.com',
-      icon: <MdEmail size={36} />,
     },
   ];
 
@@ -70,6 +65,13 @@ export default function Hero() {
                 {link.icon}
               </a>
             ))}
+                          <a
+                href='#contact'
+                className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
+              >
+                <MdEmail size={36} />
+              </a>
+
           </div>
         </div>
       </div>
