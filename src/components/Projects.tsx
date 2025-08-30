@@ -53,8 +53,8 @@ export default function Projects({ projects }: ProjectProps) {
                   rel="noopener noreferrer"
                   className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
                 >
-                  <LuExternalLink className="transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125" />
                   <span>Link</span>
+                  <LuExternalLink className="transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125" />
                 </a>
               )}
 
@@ -65,11 +65,11 @@ export default function Projects({ projects }: ProjectProps) {
                   rel="noopener noreferrer"
                   className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
                 >
+                  <span>GitHub</span>
                   <FiGithub
                     size={24}
                     className="transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125"
                   />
-                  <span>GitHub</span>
                 </a>
               )}
 
@@ -80,11 +80,11 @@ export default function Projects({ projects }: ProjectProps) {
                   rel="noopener noreferrer"
                   className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
                 >
+                  <span>Demo</span>
                   <PiVideo
                     size={24}
                     className="transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125"
                   />
-                  <span>Demo</span>
                 </a>
               )}
             </div>
