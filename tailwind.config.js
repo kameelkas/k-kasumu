@@ -21,11 +21,11 @@ export const theme = {
         dark: '#a6acc8', // muted text in dark mode
       },
       accent: {
-        light: '#7286ce', // primary button in light mode
+        light: '#9aaade', // primary button in light mode
         dark: '#4c5fd9', // primary button in dark mode (slightly muted, not neon)
       },
       accentHover: {
-        light: '#4a5dac', // hover (darkened accent in light mode)
+        light: '#7286ce', // hover (darkened accent in light mode)
         dark: '#6575e0', // hover (lightened accent in dark mode)
       },
       surface: {

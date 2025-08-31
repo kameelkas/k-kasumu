@@ -21,7 +21,7 @@ export default function Projects({ projects }: ProjectProps) {
           href="https://github.com/kameelkas"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline"
+          className="underline interactive:text-accentHover-light dark:interactive:text-accentHover-dark transition-colors duration-300 ease-in-out"
         >
           Github
         </a>
