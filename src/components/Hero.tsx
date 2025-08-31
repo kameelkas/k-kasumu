@@ -65,13 +65,12 @@ export default function Hero() {
                 {link.icon}
               </a>
             ))}
-                          <a
-                href='#contact'
-                className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
-              >
-                <MdEmail size={36} />
-              </a>
-
+            <a
+              href="#contact"
+              className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
+            >
+              <MdEmail size={36} />
+            </a>
           </div>
         </div>
       </div>

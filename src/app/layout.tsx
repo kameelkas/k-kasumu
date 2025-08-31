@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`} >
+    <html lang="en" className={`${inter.variable} scroll-smooth`}>
       <Head>
         <meta name="apple-mobile-web-app-title" content="Kameel Kasumu" />
       </Head>

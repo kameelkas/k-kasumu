@@ -31,7 +31,7 @@ export default function ContactForm() {
             name="email"
             placeholder="Your email address"
             required
-            className="rounded-md border border-gray-300 bg-transparent px-4 py-2 placeholder-gray-400 outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark"
+            className="rounded-md border border-accent-light bg-transparent px-4 py-2 placeholder-gray-400 outline-none focus:ring-2 focus:ring-accentHover-light dark:border-accent-dark dark:focus:ring-accentHover-dark"
           />
           <ValidationError
             prefix="Email"
@@ -48,7 +48,7 @@ export default function ContactForm() {
             placeholder="Your message"
             required
             rows={8}
-            className="resize-y rounded-md border border-gray-300 bg-transparent px-4 py-2 placeholder-gray-400 outline-none focus:ring-2 focus:ring-accent-light dark:focus:ring-accent-dark"
+            className="resize-y rounded-md border border-accent-light bg-transparent px-4 py-2 placeholder-gray-400 outline-none focus:ring-2 focus:ring-accentHover-light dark:border-accent-dark dark:focus:ring-accentHover-dark"
           />
           <ValidationError
             prefix="Message"

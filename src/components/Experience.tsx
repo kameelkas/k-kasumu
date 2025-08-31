@@ -52,7 +52,6 @@ export default function Experience({ experiences }: ExperienceProps) {
             >
               <span className="mx-2">See More</span>
               <TiArrowSortedDown />
-
             </button>
           </div>
           {active === index && (

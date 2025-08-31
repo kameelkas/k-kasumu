@@ -25,7 +25,7 @@ export default function Home() {
       <section className="my-16 w-full max-w-[80vw]">
         <Projects projects={projectData} />
       </section>
-      <section id='contact' className="my-16 w-full max-w-5xl">
+      <section id="contact" className="my-16 w-full max-w-5xl">
         <Contact />
       </section>
       <Footer />

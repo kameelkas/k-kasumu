@@ -14,6 +14,20 @@ export default function Projects({ projects }: ProjectProps) {
       <h1 className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
         Projects
       </h1>
+      <p className="mx-10 mb-10 text-center">
+        Here is a select list of projects I&#39;ve worked on. Feel free to
+        explore more of my work on my{' '}
+        <a
+          href="https://github.com/kameelkas"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Github
+        </a>
+        .
+      </p>
+
       <div className="grid grid-cols-1 gap-12 xl:grid-cols-2">
         {projects.map((project, index) => (
           <div
