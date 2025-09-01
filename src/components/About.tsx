@@ -1,10 +1,14 @@
+import MotionWrapper from './MotionWrapper';
 export default function About() {
   return (
     <div>
-      <h1 className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
+      <MotionWrapper
+        as="h1"
+        className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark"
+      >
         About Me
-      </h1>
-      <div className="text-center sm:text-justify">
+      </MotionWrapper>
+      <MotionWrapper className="text-center sm:text-justify">
         <p>
           Hey! I&apos;m Kameel, a final year Software & Mechatronics Engineering
           student at the University of Calgary. I previously interned at
@@ -15,7 +19,7 @@ export default function About() {
           I&apos;m usually watching sports, managing my fantasy teams, or
           playing video games.
         </p>
-      </div>
+      </MotionWrapper>
     </div>
   );
 }

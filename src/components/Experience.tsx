@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { ExperienceItem } from '@/app/utility/data';
 import { TiArrowSortedDown } from 'react-icons/ti';
+import MotionWrapper from './MotionWrapper';
 
 interface ExperienceProps {
   experiences: ExperienceItem[];
@@ -20,11 +21,15 @@ export default function Experience({ experiences }: ExperienceProps) {
   };
   return (
     <div className="flex flex-col">
-      <h1 className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark">
+      <MotionWrapper
+        as="h1"
+        className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark"
+      >
         Experience
-      </h1>
+      </MotionWrapper>
       {experiences.map((exp, index) => (
-        <div
+        <MotionWrapper
+          direction="right"
           key={index}
           className="mb-8 flex transform flex-col rounded-lg bg-surface-light p-8 shadow-2xl duration-300 ease-in-out dark:bg-surface-dark"
         >
@@ -57,7 +62,7 @@ export default function Experience({ experiences }: ExperienceProps) {
           {active === index && (
             <p className="mt-2 text-left sm:text-justify">{exp.description}</p>
           )}
-        </div>
+        </MotionWrapper>
       ))}
     </div>
   );

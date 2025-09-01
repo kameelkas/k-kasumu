@@ -26,8 +26,7 @@ export default function Hero() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
-        <MotionWrapper>
-        <div className="relative">
+        <MotionWrapper className="relative">
           <Image
             src={HeroSectionImage}
             alt="Logo Image (Kameel Kasumu's Initials 'KK')"
@@ -35,32 +34,33 @@ export default function Hero() {
             height={500}
             className="h-56 w-56 rounded-full shadow-lg sm:h-64 sm:w-64 lg:h-96 lg:w-96"
           />
-        </div></MotionWrapper>
-        <MotionWrapper direction='left'>
-        <div className="text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl">Hey, I&apos;m</h1>
-          <h1 className="text-6xl font-bold sm:text-8xl">Kameel!</h1>
-          <h1 className="text-xl sm:text-2xl">Emerging Software Engineer</h1>
-          <div className="mt-3 flex items-center justify-between space-x-6">
-            {heroLinks.map((link) => (
+        </MotionWrapper>
+        <MotionWrapper direction="left">
+          <MotionWrapper className="text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl">Hey, I&apos;m</h1>
+            <h1 className="text-6xl font-bold sm:text-8xl">Kameel!</h1>
+            <h1 className="text-xl sm:text-2xl">Emerging Software Engineer</h1>
+            <div className="mt-3 flex items-center justify-between space-x-6">
+              {heroLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
+                >
+                  {link.icon}
+                </a>
+              ))}
               <a
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contact"
                 className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
               >
-                {link.icon}
+                <MdEmail size={36} />
               </a>
-            ))}
-            <a
-              href="#contact"
-              className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
-            >
-              <MdEmail size={36} />
-            </a>
-          </div>
-        </div></MotionWrapper>
+            </div>
+          </MotionWrapper>
+        </MotionWrapper>
       </div>
     </div>
   );
