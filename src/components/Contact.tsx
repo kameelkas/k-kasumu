@@ -12,11 +12,12 @@ export default function ContactForm() {
         Contact
       </h1>
       <p className="mx-10 mb-10 text-center">
-        Curious about my work or have something in mind? Don&#39;t hesitate to send
-        me an email at{' '}
-        <a href="mailto:kameelkas@gmail.com" 
-        className="underline interactive:text-accentHover-light dark:interactive:text-accentHover-dark transition-colors duration-300 ease-in-out"
-        >  
+        Curious about my work or have something in mind? Don&#39;t hesitate to
+        send me an email at{' '}
+        <a
+          href="mailto:kameelkas@gmail.com"
+          className="underline transition-colors duration-300 ease-in-out interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
+        >
           kameelkas@gmail.com
         </a>{' '}
         or drop a message below. I&#39;m always excited to connect and chat!

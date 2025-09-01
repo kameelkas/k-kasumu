@@ -1,13 +1,9 @@
-'use client';
 import Image from 'next/image';
-import DarkKK from '@/images/dark-KK.jpeg';
-import LightKK from '@/images/light-KK.jpeg';
+import HeroSectionImage from '@/images/dark-KK.jpeg';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosPaper } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
-import { useEffect, useState } from 'react';
 export default function Hero() {
-  const [isDark, setIsDark] = useState(false);
   const heroLinks = [
     {
       name: 'GitHub',
@@ -26,23 +22,12 @@ export default function Hero() {
     },
   ];
 
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    setIsDark(mediaQuery.matches);
-    const handleChange = (e: MediaQueryListEvent) => {
-      setIsDark(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, []);
-
   return (
     <div>
       <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
         <div className="relative">
           <Image
-            src={isDark ? LightKK : DarkKK}
+            src={HeroSectionImage}
             alt="Logo Image (Kameel Kasumu's Initials 'KK')"
             width={500}
             height={500}

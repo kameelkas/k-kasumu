@@ -71,8 +71,6 @@ export const projectData: ProjectItem[] = [
       'Collaborated in a team to create a branded and dynamic online storefront featuring storytelling, a gallery, and seamless shopping experiences.',
     image: PAOFashionzImage,
     link: 'https://paofashionz.ca',
-    github: '#',
-    demo: '#',
     techStack: [
       'Next.js',
       'Typescript',
