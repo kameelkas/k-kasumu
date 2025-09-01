@@ -3,6 +3,7 @@ import HeroSectionImage from '@/images/dark-KK.jpeg';
 import { SiGithub, SiLinkedin } from 'react-icons/si';
 import { IoIosPaper } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
+import MotionWrapper from './MotionWrapper';
 export default function Hero() {
   const heroLinks = [
     {
@@ -25,6 +26,7 @@ export default function Hero() {
   return (
     <div>
       <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
+        <MotionWrapper>
         <div className="relative">
           <Image
             src={HeroSectionImage}
@@ -33,7 +35,8 @@ export default function Hero() {
             height={500}
             className="h-56 w-56 rounded-full shadow-lg sm:h-64 sm:w-64 lg:h-96 lg:w-96"
           />
-        </div>
+        </div></MotionWrapper>
+        <MotionWrapper direction='left'>
         <div className="text-center md:text-left">
           <h1 className="text-4xl sm:text-5xl">Hey, I&apos;m</h1>
           <h1 className="text-6xl font-bold sm:text-8xl">Kameel!</h1>
@@ -57,7 +60,7 @@ export default function Hero() {
               <MdEmail size={36} />
             </a>
           </div>
-        </div>
+        </div></MotionWrapper>
       </div>
     </div>
   );

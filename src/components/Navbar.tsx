@@ -38,8 +38,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed left-0 top-0 z-50 w-full bg-surface-light shadow-md backdrop-filter dark:bg-surface-dark">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
+    <nav className="fixed top-5 z-50 w-full bg-none">
+      <div className="mx-auto flex w-[90vw] bg-accent-light bg-opacity-25 dark:bg-accent-dark dark:bg-opacity-25 rounded-full items-center shadow-md justify-between px-4 py-2 backdrop-blur-3xl">
         {/* Logo / Image */}
         <Link href="#home">
           <Image
@@ -103,7 +103,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {menuOpen && (
         <motion.ul
-          className="fixed inset-y-0 right-0 flex w-[75vw] flex-col space-y-4 bg-transparent p-4 shadow-md backdrop-blur-3xl md:hidden"
+          className="fixed inset-y-0 right-0 flex w-[60vw] flex-col space-y-4 bg-transparent p-4 shadow-md backdrop-blur-3xl md:hidden"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
