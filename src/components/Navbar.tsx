@@ -39,7 +39,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-5 z-50 w-full bg-none">
-      <div className="mx-auto flex w-[90vw] items-center justify-between rounded-full bg-accent-light bg-opacity-25 px-4 py-2 shadow-md backdrop-blur-3xl dark:bg-accent-dark dark:bg-opacity-25">
+      <div className="mx-auto flex w-[90vw] items-center justify-between rounded-full bg-accent-light bg-opacity-25 shadow-md backdrop-blur-3xl dark:bg-accent-dark dark:bg-opacity-25">
         {/* Logo / Image */}
         <Link href="#home">
           <Image
@@ -47,7 +47,7 @@ export default function Navbar() {
             alt="Navbar Logo (Kameel Kasumu's Initials 'KK')"
             width={50}
             height={50}
-            className="cursor-pointer rounded-full"
+            className="ml-4 cursor-pointer rounded-full"
           />
         </Link>
 

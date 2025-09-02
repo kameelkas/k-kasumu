@@ -5,10 +5,10 @@ import { HiCode } from 'react-icons/hi';
 export default function Footer() {
   const year = new Date().getFullYear();
   const buildDate = new Date(
-    process.env.NEXT_PUBLIC_BUILD_DATE || ""
-  ).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
+    process.env.NEXT_PUBLIC_BUILD_DATE || ''
+  ).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
   });
 
   return (

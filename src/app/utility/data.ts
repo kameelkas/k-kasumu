@@ -78,6 +78,8 @@ export const projectData: ProjectItem[] = [
       'Shopify Storefront API',
       'Vercel',
       'Sanity CMS',
+      'GraphQL',
+      'GROQ',
     ],
   },
   {
