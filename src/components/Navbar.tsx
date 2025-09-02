@@ -39,20 +39,22 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-5 z-50 w-full bg-none">
-      <div className="mx-auto flex w-[90vw] items-center justify-between rounded-full bg-accent-light bg-opacity-25 shadow-md backdrop-blur-3xl dark:bg-accent-dark dark:bg-opacity-25">
+      <div className="mx-auto flex w-[90vw] items-center justify-between rounded-full bg-accent-light bg-opacity-25 px-4 py-2 shadow-md backdrop-blur-3xl md:py-0 dark:bg-accent-dark dark:bg-opacity-25">
         {/* Logo / Image */}
-        <Link href="#home">
-          <Image
-            src={NavbarLogo}
-            alt="Navbar Logo (Kameel Kasumu's Initials 'KK')"
-            width={50}
-            height={50}
-            className="ml-4 cursor-pointer rounded-full"
-          />
-        </Link>
+        <div className="min-w-fit">
+          <Link href="#home">
+            <Image
+              src={NavbarLogo}
+              alt="Navbar Logo (Kameel Kasumu's Initials 'KK')"
+              width={50}
+              height={50}
+              className="cursor-pointer rounded-full"
+            />
+          </Link>
+        </div>
 
         {/* Desktop Menu */}
-        <ul className="relative hidden space-x-8 px-6 py-4 md:flex">
+        <ul className="relative hidden min-w-fit space-x-2 px-6 py-4 md:flex lg:space-x-8">
           {sections.map((sec) => (
             <li key={sec} className="relative px-2 py-1">
               <Link

@@ -39,7 +39,7 @@ export default function MotionWrapper<T extends ElementType = 'div'>({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false }}
-      transition={{ duration: 0.5, ease: 'linear' }}
+      transition={{ duration: 0.5, ease: 'easeIn' }}
       {...rest}
     >
       {children}
