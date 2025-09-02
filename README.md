@@ -13,9 +13,9 @@ This is my personal and developer portfolio, showcasing my projects, skills, act
 - About Me section
 - Projects showcase
 - Skills & technologies
-- Contact form or links
+- Contact form
 - Dark mode (Based on Device's current mode)
 
-## Live Link
+## Visit
 
-Check it out here! [INSERT LINK ONCE DEPLOYED]
+Check it out [here](https://kkasumu.vercel.app)!
