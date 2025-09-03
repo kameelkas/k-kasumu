@@ -39,7 +39,6 @@ export const skillsData: SkillsData = {
     'TypeScript',
     'JavaScript',
     'C#',
-    'GraphQL',
     'SQL',
   ],
   frameworks: ['Next.js', 'React', 'Tailwind CSS', 'MFCShell', 'WinAppDriver'],
