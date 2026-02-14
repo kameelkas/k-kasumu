@@ -15,7 +15,7 @@ export default function MotionWrapper<T extends ElementType = 'div'>({
   as,
   ...rest
 }: MotionWrapperProps<T>) {
-  const MotionComponent = motion(as || 'div');
+  const MotionComponent = motion.create(as || 'div');
 
   const variants = {
     hidden:

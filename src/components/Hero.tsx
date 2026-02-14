@@ -18,7 +18,7 @@ export default function Hero() {
     },
     {
       name: 'Resume',
-      url: "/Kameel Kasumu Resume '25.pdf",
+      url: "/Kameel Kasumu Resume (Full).pdf",
       icon: <IoIosPaper size={36} />,
     },
   ];
