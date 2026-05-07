@@ -13,7 +13,7 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="flex flex-col items-center justify-center space-x-2 text-sm font-semibold text-gray-400 dark:text-gray-600">
+      <div className="flex flex-col items-center justify-center space-x-2 text-base font-semibold text-gray-400 dark:text-gray-600">
         <span>© {year} Kameel Kasumu. All rights reserved.</span>
         <span>Last updated: {buildDate}</span>
         <motion.span

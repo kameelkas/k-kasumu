@@ -53,13 +53,23 @@ export const skillsData: SkillsData = {
   ],
 };
 
+export enum LinkType {
+  VISIT = "Visit",
+  GITHUB = "Code",
+  DEMO = "Demo",
+  EXPLANATIVE = "Explanative",
+}
+
+export interface LinkObject {
+  type: LinkType;
+  url: string;
+}
+
 export interface ProjectItem {
   title: string;
   description: string;
   image: StaticImageData;
-  link?: string;
-  github?: string;
-  demo?: string;
+  links: LinkObject[];
   techStack: string[];
 }
 
@@ -69,7 +79,12 @@ export const projectData: ProjectItem[] = [
     description:
       'Collaborated in a team to create a branded and dynamic online storefront featuring storytelling, a gallery, and seamless shopping experiences.',
     image: PAOFashionzImage,
-    link: 'https://paofashionz.ca',
+    links: [
+      {
+        type: LinkType.VISIT,
+        url: 'https://paofashionz.ca',
+      },
+    ],
     techStack: [
       'Next.js',
       'Typescript',
@@ -86,7 +101,12 @@ export const projectData: ProjectItem[] = [
     description:
       'Collaborated in a team to develop a full-stack web application that fosters a student community by enabling easy buying, selling, and exchanging of digital and physical items for UCalgary students.',
     image: UnityImage,
-    link: 'https://uni-ty-fawn.vercel.app',
+    links: [
+      {
+        type: LinkType.VISIT,
+        url: 'https://uni-ty-fawn.vercel.app',
+      },
+    ],
     techStack: [
       'Next.js',
       'Typescript',

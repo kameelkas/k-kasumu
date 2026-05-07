@@ -3,13 +3,24 @@ import Image from 'next/image';
 import { LuExternalLink } from 'react-icons/lu';
 import { FiGithub } from 'react-icons/fi';
 import { PiVideo } from 'react-icons/pi';
+import { IoReaderOutline } from "react-icons/io5";
 import MotionWrapper from './MotionWrapper';
+import {LinkType} from '@/app/utility/data';
+import { JSX } from 'react';
 
 interface ProjectProps {
   projects: ProjectItem[];
 }
 
 export default function Projects({ projects }: ProjectProps) {
+  const linkIconStyles = "transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125";
+  const linkIcons: Record<LinkType, JSX.Element> = {
+      [LinkType.VISIT]: <LuExternalLink className={linkIconStyles} />,
+      [LinkType.GITHUB]: <FiGithub className={linkIconStyles} />,
+      [LinkType.DEMO]: <PiVideo className={linkIconStyles} />,
+      [LinkType.EXPLANATIVE]: <IoReaderOutline className={linkIconStyles} />
+    };
+
   return (
     <div>
       <MotionWrapper
@@ -65,47 +76,18 @@ export default function Projects({ projects }: ProjectProps) {
             <div className="flex-1"></div>
 
             <div className="mx-3 mb-3 flex flex-col gap-2 sm:flex-row">
-              {project.link && (
+              {project.links.map((link, index) => (
                 <a
-                  href={project.link}
+                  key={index}
+                  href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
                 >
-                  <span>Link</span>
-                  <LuExternalLink className="transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125" />
+                  <span>{link.type}</span>
+                  {linkIcons[link.type]}
                 </a>
-              )}
-
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
-                >
-                  <span>GitHub</span>
-                  <FiGithub
-                    size={24}
-                    className="transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125"
-                  />
-                </a>
-              )}
-
-              {project.demo && (
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
-                >
-                  <span>Demo</span>
-                  <PiVideo
-                    size={24}
-                    className="transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125"
-                  />
-                </a>
-              )}
+              ))}
             </div>
           </MotionWrapper>
         ))}
