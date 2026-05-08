@@ -1,5 +1,6 @@
 import SeequentLogo from '@/images/seequent.png';
 import PAOFashionzImage from '@/images/paofashionz.png';
+import LifeLensWebPortalImage from '@/images/lifelens-portal.png';
 import UnityImage from '@/images/unity.png';
 import { StaticImageData } from 'next/image';
 
@@ -74,6 +75,24 @@ export interface ProjectItem {
 }
 
 export const projectData: ProjectItem[] = [
+  {
+    title: 'LifeLens Web Portal',
+    description:
+      'Developed a simple web application to showcase how patient data may be visualized and interacted with using the data collected from the LifeLens paramedic device. Inlcudes interactive body map and timeline to showcase identified injuries and timestamped medications and interventions collected. There is also a secure AHS portal to view patient images.',
+    image: LifeLensWebPortalImage,
+    links: [
+      {
+        type: LinkType.DEMO,
+        url: 'https://youtu.be/wVYDB7JFGXY',
+      },
+    ],
+    techStack: [
+      'React',
+      'JavaScript',
+      'Tailwind CSS',
+      'Vercel',
+    ],
+  },
   {
     title: 'PAO Fashionz',
     description:

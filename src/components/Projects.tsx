@@ -1,8 +1,7 @@
 import { ProjectItem } from '@/app/utility/data';
 import Image from 'next/image';
-import { LuExternalLink } from 'react-icons/lu';
+import { LuExternalLink, LuVideo  } from 'react-icons/lu';
 import { FiGithub } from 'react-icons/fi';
-import { PiVideo } from 'react-icons/pi';
 import { IoReaderOutline } from "react-icons/io5";
 import MotionWrapper from './MotionWrapper';
 import {LinkType} from '@/app/utility/data';
@@ -17,7 +16,7 @@ export default function Projects({ projects }: ProjectProps) {
   const linkIcons: Record<LinkType, JSX.Element> = {
       [LinkType.VISIT]: <LuExternalLink className={linkIconStyles} />,
       [LinkType.GITHUB]: <FiGithub className={linkIconStyles} />,
-      [LinkType.DEMO]: <PiVideo className={linkIconStyles} />,
+      [LinkType.DEMO]: <LuVideo className={linkIconStyles} />,
       [LinkType.EXPLANATIVE]: <IoReaderOutline className={linkIconStyles} />
     };
 
