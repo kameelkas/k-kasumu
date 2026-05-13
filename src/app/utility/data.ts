@@ -1,6 +1,7 @@
 import SeequentLogo from '@/images/seequent.png';
 import PAOFashionzImage from '@/images/paofashionz.png';
 import LifeLensWebPortalImage from '@/images/lifelens-portal.png';
+import LifeLensLogoBg from '@/images/LifeLens-bg.png';
 import UnityImage from '@/images/unity.png';
 import { StaticImageData } from 'next/image';
 
@@ -75,6 +76,31 @@ export interface ProjectItem {
 }
 
 export const projectData: ProjectItem[] = [
+  {
+    title: 'LifeLens',
+    description:
+     'Co-founder and developer of LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes.',
+    image: LifeLensLogoBg,
+    links: [
+      {
+        type: LinkType.DEMO,
+        url: 'https://youtu.be/Mz_NLebq0Gs',
+      },
+      {
+        type: LinkType.EXPLANATIVE,
+        url: "/LifeLensPoster.pdf",
+
+      }
+    ],
+    techStack: [
+      'Python',
+      'MQTT',
+      'NLP',
+      'Computer Vision',
+      'Entrepeneurship/Startup',
+
+    ],
+  },
   {
     title: 'LifeLens Web Portal',
     description:
