@@ -20,7 +20,7 @@ export const experienceData: ExperienceItem[] = [
     logo: SeequentLogo,
     duration: 'May 2024 - August 2025',
     description:
-      'I completed a 16-month internship at Seequent, where I implemented and refactored key UI features for GeoStudio, including the “Project Settings” interface for its market leading slope stability module. I also served as Scrum Master, led agile improvements, maintained build pipeline health, and mentored a new intern—all while strengthening team collaboration and product reliability.',
+      'I completed a 16-month internship at Seequent, where I implemented and refactored key UI features for GeoStudio, including the “Project Settings” interface for its market leading slope stability module. I also served as Scrum Master, led agile improvements, maintained build pipeline health, and mentored a new intern, all while strengthening team collaboration and product reliability.',
   },
 ];
 
@@ -73,13 +73,14 @@ export interface ProjectItem {
   image: StaticImageData;
   links: LinkObject[];
   techStack: string[];
+  otherInfo: string[];
 }
 
 export const projectData: ProjectItem[] = [
   {
     title: 'LifeLens',
     description:
-     'Co-founder and developer of LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes.',
+     'Co-developed LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes.',
     image: LifeLensLogoBg,
     links: [
       {
@@ -90,15 +91,21 @@ export const projectData: ProjectItem[] = [
         type: LinkType.EXPLANATIVE,
         url: "/LifeLensPoster.pdf",
 
+      },
+      {
+        type: LinkType.GITHUB,
+        url: "https://github.com/uofc-ai2lab/LifeLens",
       }
     ],
     techStack: [
       'Python',
       'MQTT',
+      'NoSQL', 
       'NLP',
       'Computer Vision',
+    ],
+    otherInfo: [
       'Entrepeneurship/Startup',
-
     ],
   },
   {
@@ -118,6 +125,9 @@ export const projectData: ProjectItem[] = [
       'Tailwind CSS',
       'Vercel',
     ],
+    otherInfo: [
+      'AI-Augmented Workflow'
+    ]
   },
   {
     title: 'PAO Fashionz',
@@ -140,6 +150,7 @@ export const projectData: ProjectItem[] = [
       'GraphQL',
       'GROQ',
     ],
+    otherInfo: []
   },
   {
     title: 'Uni-ty',
@@ -161,5 +172,6 @@ export const projectData: ProjectItem[] = [
       'Selenium',
       'Vercel',
     ],
+    otherInfo: []
   },
 ];

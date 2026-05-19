@@ -71,6 +71,14 @@ export default function Projects({ projects }: ProjectProps) {
                   {tech}
                 </span>
               ))}
+              {project.otherInfo.map((other, index) => (
+                <span
+                  key={index}
+                  className="rounded-full bg-accent-light px-3 py-1 text-xs font-semibold sm:text-sm dark:bg-accent-dark/20"
+                >
+                  {other}
+                </span>
+              ))}
             </div>
             <div className="flex-1"></div>
 
