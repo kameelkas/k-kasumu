@@ -56,10 +56,10 @@ export const skillsData: SkillsData = {
 };
 
 export enum LinkType {
-  VISIT = "Visit",
-  GITHUB = "Code",
-  DEMO = "Demo",
-  EXPLANATIVE = "Explanative",
+  VISIT = 'Visit',
+  GITHUB = 'Code',
+  DEMO = 'Demo',
+  EXPLANATIVE = 'Explanative',
 }
 
 export interface LinkObject {
@@ -80,7 +80,7 @@ export const projectData: ProjectItem[] = [
   {
     title: 'LifeLens',
     description:
-     'Co-developed LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes.',
+      'Co-developed LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes.',
     image: LifeLensLogoBg,
     links: [
       {
@@ -89,24 +89,15 @@ export const projectData: ProjectItem[] = [
       },
       {
         type: LinkType.EXPLANATIVE,
-        url: "/LifeLensPoster.pdf",
-
+        url: '/LifeLensPoster.pdf',
       },
       {
         type: LinkType.GITHUB,
-        url: "https://github.com/uofc-ai2lab/LifeLens",
-      }
+        url: 'https://github.com/uofc-ai2lab/LifeLens',
+      },
     ],
-    techStack: [
-      'Python',
-      'MQTT',
-      'NoSQL', 
-      'NLP',
-      'Computer Vision',
-    ],
-    otherInfo: [
-      'Entrepeneurship/Startup',
-    ],
+    techStack: ['Python', 'MQTT', 'NoSQL', 'NLP', 'Computer Vision'],
+    otherInfo: ['Entrepeneurship/Startup'],
   },
   {
     title: 'LifeLens Web Portal',
@@ -119,15 +110,8 @@ export const projectData: ProjectItem[] = [
         url: 'https://youtu.be/wVYDB7JFGXY',
       },
     ],
-    techStack: [
-      'React',
-      'JavaScript',
-      'Tailwind CSS',
-      'Vercel',
-    ],
-    otherInfo: [
-      'AI-Augmented Workflow'
-    ]
+    techStack: ['React', 'JavaScript', 'Tailwind CSS', 'Vercel'],
+    otherInfo: ['AI-Augmented Workflow'],
   },
   {
     title: 'PAO Fashionz',
@@ -150,7 +134,7 @@ export const projectData: ProjectItem[] = [
       'GraphQL',
       'GROQ',
     ],
-    otherInfo: []
+    otherInfo: [],
   },
   {
     title: 'Uni-ty',
@@ -172,6 +156,6 @@ export const projectData: ProjectItem[] = [
       'Selenium',
       'Vercel',
     ],
-    otherInfo: []
+    otherInfo: [],
   },
 ];

@@ -56,7 +56,10 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <ul className="relative hidden min-w-fit space-x-2 px-6 py-4 md:flex lg:space-x-8">
           {sections.map((sec) => (
-            <li key={sec} className="relative px-2 py-1 interactive:scale-110 transition-all duration-300 ease-in">
+            <li
+              key={sec}
+              className="relative px-2 py-1 transition-all duration-300 ease-in interactive:scale-110"
+            >
               <Link
                 href={`#${sec}`}
                 onClick={(e) => {

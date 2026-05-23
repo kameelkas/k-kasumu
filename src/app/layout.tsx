@@ -20,7 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth bg-[#f4f6fb] dark:bg-[#12141b]`}>
+    <html
+      lang="en"
+      className={`${inter.variable} scroll-smooth bg-[#f4f6fb] dark:bg-[#12141b]`}
+    >
       <Head>
         <meta name="apple-mobile-web-app-title" content="Kameel Kasumu" />
       </Head>

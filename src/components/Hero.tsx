@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import HeroSectionImage from '@/images/dark-KK.jpeg';
-import { SiGithub, SiLinkedin } from 'react-icons/si';
+import { SiGithub } from 'react-icons/si';
+import { FaLinkedin } from "react-icons/fa";
 import { IoIosPaper } from 'react-icons/io';
 import { MdEmail } from 'react-icons/md';
 import MotionWrapper from './MotionWrapper';
@@ -14,11 +15,11 @@ export default function Hero() {
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/ka-kasumu/',
-      icon: <SiLinkedin size={36} />,
+      icon: <FaLinkedin size={36} />,
     },
     {
       name: 'Resume',
-      url: "/Kameel Kasumu Resume (Full).pdf",
+      url: '/Kameel Kasumu Resume (Full).pdf',
       icon: <IoIosPaper size={36} />,
     },
   ];
