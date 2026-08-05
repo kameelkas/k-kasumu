@@ -33,6 +33,7 @@ export default function Hero() {
             alt="Logo Image (Kameel Kasumu's Initials 'KK')"
             width={500}
             height={500}
+            priority
             className="h-56 w-56 rounded-full shadow-lg sm:h-64 sm:w-64 lg:h-96 lg:w-96"
           />
         </MotionWrapper>

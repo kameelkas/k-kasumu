@@ -136,26 +136,4 @@ export const projectData: ProjectItem[] = [
     ],
     otherInfo: [],
   },
-  {
-    title: 'Uni-ty',
-    description:
-      'Collaborated in a team to develop a full-stack web application that fosters a student community by enabling easy buying, selling, and exchanging of digital and physical items for UCalgary students.',
-    image: UnityImage,
-    links: [
-      {
-        type: LinkType.VISIT,
-        url: 'https://uni-ty-fawn.vercel.app',
-      },
-    ],
-    techStack: [
-      'Next.js',
-      'Typescript',
-      'Tailwind CSS',
-      'Firebase',
-      'Firestore',
-      'Selenium',
-      'Vercel',
-    ],
-    otherInfo: [],
-  },
 ];
