@@ -1,8 +1,9 @@
 'use client';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useId, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
+import { PiCaretDown } from 'react-icons/pi';
 import { ExperienceItem } from '@/app/utility/data';
-import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti';
 
 interface ExperienceProps {
   experience: ExperienceItem;
@@ -11,52 +12,67 @@ interface ExperienceProps {
 
 export default function ExperienceCard({ experience, index }: ExperienceProps) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const detailsId = useId();
 
   return (
-    <div
-      key={index}
-      className="mb-8 flex transform flex-col rounded-lg bg-surface-light p-8 shadow-2xl duration-300 ease-in-out dark:bg-surface-dark"
-    >
-      <div className="mb-4 flex flex-row justify-between">
-        <div className="relative mr-4 h-16 w-16 flex-shrink-0 sm:h-20 sm:w-20 lg:h-24 lg:w-24">
+    <article className="rounded-3xl bg-surface-light/80 p-6 shadow-soft ring-1 ring-inset ring-line-light/70 sm:p-8 dark:bg-surface-dark/70 dark:shadow-soft-dark dark:ring-line-dark/60">
+      <div className="flex items-start gap-5 sm:gap-6">
+        <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl bg-white ring-1 ring-line-light sm:h-20 sm:w-20 dark:ring-line-dark">
           <Image
             src={experience.logo}
-            alt={`${experience.company} Logo`}
+            alt={`${experience.company} logo`}
             fill
-            sizes="(min-width: 1024px) 6rem, (min-width: 640px) 5rem, 4rem"
-            className="rounded-lg object-contain"
-            priority={index === 0} // optional: avoids pop-in for the first item
+            sizes="(min-width: 640px) 5rem, 3.5rem"
+            className="object-contain p-1.5"
+            priority={index === 0}
           />
         </div>
-        <div className="ml-4 flex flex-col text-end">
-          <span className="font-semibold">{experience.position}</span>
-          <span className="italic">{experience.company}</span>
-          <span>{experience.duration}</span>
+        <div className="flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+          <div>
+            <h3 className="text-xl font-semibold tracking-[-0.02em] sm:text-2xl">
+              {experience.position}
+            </h3>
+            <p className="text-base font-medium text-secondary-light sm:text-lg dark:text-secondary-dark">
+              {experience.company}
+            </p>
+          </div>
+          <p className="font-mono text-sm tabular-nums text-secondary-light sm:pt-1.5 sm:text-right dark:text-secondary-dark">
+            {experience.duration}
+          </p>
         </div>
       </div>
-      <div className="flex justify-center">
+
+      <AnimatePresence initial={false}>
+        {isExpanded && (
+          <motion.p
+            id={detailsId}
+            key="details"
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -6 }}
+            transition={{ duration: 0.22, ease: 'easeOut' }}
+            className="mt-6 max-w-prose text-base leading-relaxed sm:pl-[6.5rem] sm:text-lg"
+          >
+            {experience.description}
+          </motion.p>
+        )}
+      </AnimatePresence>
+
+      <div className="mt-5 sm:pl-[6.5rem]">
         <button
-          className="flex w-fit transform flex-row items-center justify-center rounded-full bg-accent-light p-2 text-sm duration-300 ease-in-out interactive:bg-accentHover-light sm:text-xl md:text-2xl dark:bg-accent-dark dark:interactive:bg-accentHover-dark"
-          onClick={() => setIsExpanded(!isExpanded)}
+          type="button"
+          aria-expanded={isExpanded}
+          aria-controls={isExpanded ? detailsId : undefined}
+          onClick={() => setIsExpanded((open) => !open)}
+          className="group -ml-3 inline-flex min-h-11 items-center gap-2 rounded-xl px-3 text-base font-medium text-accentHover-light transition duration-200 hover:bg-accent-light/20 active:scale-[0.98] dark:text-accentHover-dark dark:hover:bg-accent-dark/20"
         >
-          {isExpanded ? (
-            <>
-              <span className="mx-2">See Less</span>
-              <TiArrowSortedUp />
-            </>
-          ) : (
-            <>
-              <span className="mx-2">See More</span>
-              <TiArrowSortedDown />
-            </>
-          )}
+          {isExpanded ? 'Hide details' : 'Read what I did'}
+          <PiCaretDown
+            aria-hidden="true"
+            className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+          />
         </button>
       </div>
-      {isExpanded && (
-        <p className="mt-2 text-left sm:text-justify">
-          {experience.description}
-        </p>
-      )}
-    </div>
+    </article>
   );
 }

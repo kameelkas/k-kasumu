@@ -1,104 +1,43 @@
 import { ProjectItem } from '@/app/utility/data';
-import Image from 'next/image';
-import { LuExternalLink, LuVideo } from 'react-icons/lu';
-import { FiGithub } from 'react-icons/fi';
-import { IoReaderOutline } from 'react-icons/io5';
 import MotionWrapper from './MotionWrapper';
-import { LinkType } from '@/app/utility/data';
-import { JSX } from 'react';
+import ProjectCard from './ProjectCard';
+import SectionHeading from './SectionHeading';
 
 interface ProjectProps {
   projects: ProjectItem[];
 }
 
 export default function Projects({ projects }: ProjectProps) {
-  const linkIconStyles =
-    'transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125';
-  const linkIcons: Record<LinkType, JSX.Element> = {
-    [LinkType.VISIT]: <LuExternalLink className={linkIconStyles} />,
-    [LinkType.GITHUB]: <FiGithub className={linkIconStyles} />,
-    [LinkType.DEMO]: <LuVideo className={linkIconStyles} />,
-    [LinkType.EXPLANATIVE]: <IoReaderOutline className={linkIconStyles} />,
-  };
-
   return (
     <div>
-      <MotionWrapper
-        as="h1"
-        className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark"
-      >
-        Projects
-      </MotionWrapper>
-      <MotionWrapper as="p" className="mx-10 mb-10 text-center">
-        Here is a select list of projects I&#39;ve worked on. Feel free to
-        explore more of my work on my{' '}
+      <SectionHeading index="04" title="Projects" id="projects-heading">
+        A select list of projects I&apos;ve worked on. You can find more of my
+        work on my{' '}
         <a
           href="https://github.com/kameelkas"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline transition-colors duration-300 ease-in-out interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
+          className="link-underline text-primary-light dark:text-primary-dark"
         >
-          Github
+          GitHub
         </a>
         .
-      </MotionWrapper>
+      </SectionHeading>
 
-      <div className="grid grid-cols-1 gap-12 xl:grid-cols-2">
-        {projects.map((project, index) => (
-          <MotionWrapper
-            direction="down"
-            key={index}
-            className="flex w-full flex-col rounded-lg bg-surface-light shadow-lg dark:bg-surface-dark"
-          >
-            <div className="relative w-full">
-              <Image
-                src={project.image}
-                alt={`A screenshot of the ${project.title} project`}
-                width={1600}
-                height={900}
-                className="h-32 rounded-t-lg object-cover sm:h-64 lg:h-80"
-                priority
-              />
-            </div>
-
-            <div className="p-2 font-semibold">{project.title}</div>
-            <div className="p-2 text-sm sm:text-lg">{project.description}</div>
-            <div className="mb-4 flex flex-wrap gap-2 px-2">
-              {project.techStack.map((tech, index) => (
-                <span
-                  key={index}
-                  className="rounded-full bg-accent-light px-3 py-1 text-xs font-semibold sm:text-sm dark:bg-accent-dark"
-                >
-                  {tech}
-                </span>
-              ))}
-              {project.otherInfo.map((other, index) => (
-                <span
-                  key={index}
-                  className="rounded-full bg-accent-light/20 px-3 py-1 text-xs font-semibold sm:text-sm dark:bg-accent-dark/20"
-                >
-                  {other}
-                </span>
-              ))}
-            </div>
-            <div className="flex-1"></div>
-
-            <div className="mx-3 mb-3 flex flex-col gap-2 sm:flex-row">
-              {project.links.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
-                >
-                  <span>{link.type}</span>
-                  {linkIcons[link.type]}
-                </a>
-              ))}
-            </div>
-          </MotionWrapper>
-        ))}
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+        {projects.map((project, index) => {
+          const wide =
+            projects.length % 2 === 1 && index === projects.length - 1;
+          return (
+            <MotionWrapper
+              key={project.title}
+              delay={(index % 2) * 0.1}
+              className={wide ? 'h-full lg:col-span-2' : 'h-full'}
+            >
+              <ProjectCard project={project} index={index} wide={wide} />
+            </MotionWrapper>
+          );
+        })}
       </div>
     </div>
   );

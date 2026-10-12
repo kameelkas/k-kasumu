@@ -1,45 +1,39 @@
 import { SkillsData } from '@/app/utility/data';
 import MotionWrapper from './MotionWrapper';
+import SectionHeading from './SectionHeading';
 
 export interface SkillsProps {
   skills: SkillsData;
 }
 
 export default function Skills({ skills }: SkillsProps) {
+  const groups = [
+    { label: 'Languages', items: skills.languages },
+    { label: 'Frameworks', items: skills.frameworks },
+    { label: 'Tools & platforms', items: skills.toolsAndPlatforms },
+  ];
+
   return (
     <div>
-      <MotionWrapper
-        as="h1"
-        className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark"
-      >
-        Skills
-      </MotionWrapper>
-      <div className="flex flex-wrap justify-center gap-4 text-center">
-        {skills.languages.map((language, index) => (
+      <SectionHeading index="03" title="Skills" id="skills-heading" />
+      <div className="divide-y divide-line-light dark:divide-line-dark">
+        {groups.map((group, groupIndex) => (
           <MotionWrapper
-            as="span"
-            key={index}
-            className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
+            key={group.label}
+            delay={groupIndex * 0.08}
+            className="grid gap-4 py-6 first:pt-0 last:pb-0 sm:grid-cols-[11rem_minmax(0,1fr)] sm:gap-8"
           >
-            {language}
-          </MotionWrapper>
-        ))}
-        {skills.frameworks.map((framework, index) => (
-          <MotionWrapper
-            as="span"
-            key={index}
-            className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
-          >
-            {framework}
-          </MotionWrapper>
-        ))}
-        {skills.toolsAndPlatforms.map((tool, index) => (
-          <MotionWrapper
-            as="span"
-            key={index}
-            className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
-          >
-            {tool}
+            <h3 className="eyebrow pt-2">{group.label}</h3>
+            <ul className="flex flex-wrap gap-2.5">
+              {group.items.map((item) => (
+                <li
+                  key={item}
+                  className="rounded-lg bg-surface-light/80 px-3.5 py-1.5 text-base font-medium shadow-soft ring-1 ring-inset ring-line-light/70 transition duration-200 hover:-translate-y-0.5 hover:ring-accent-light dark:bg-surface-dark/70 dark:shadow-soft-dark dark:ring-line-dark/60 dark:hover:ring-accent-dark"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
           </MotionWrapper>
         ))}
       </div>
