@@ -2,7 +2,6 @@ import SeequentLogo from '@/images/seequent.png';
 import PAOFashionzImage from '@/images/paofashionz.png';
 import LifeLensWebPortalImage from '@/images/lifelens-portal.png';
 import LifeLensLogoBg from '@/images/LifeLens-bg.png';
-import UnityImage from '@/images/unity.png';
 import { StaticImageData } from 'next/image';
 
 export interface ExperienceItem {
@@ -97,12 +96,12 @@ export const projectData: ProjectItem[] = [
       },
     ],
     techStack: ['Python', 'MQTT', 'NoSQL', 'NLP', 'Computer Vision'],
-    otherInfo: ['Entrepeneurship/Startup'],
+    otherInfo: ['Entrepreneurship / startup'],
   },
   {
     title: 'LifeLens Web Portal',
     description:
-      'Developed a simple web application to showcase how patient data may be visualized and interacted with using the data collected from the LifeLens paramedic device. Inlcudes interactive body map and timeline to showcase identified injuries and timestamped medications and interventions collected. There is also a secure AHS portal to view patient images.',
+      'Developed a simple web application to showcase how patient data may be visualized and interacted with using the data collected from the LifeLens paramedic device. It includes an interactive body map and timeline to showcase identified injuries and timestamped medications and interventions collected. There is also a secure AHS portal to view patient images.',
     image: LifeLensWebPortalImage,
     links: [
       {
@@ -111,7 +110,7 @@ export const projectData: ProjectItem[] = [
       },
     ],
     techStack: ['React', 'JavaScript', 'Tailwind CSS', 'Vercel'],
-    otherInfo: ['AI-Augmented Workflow'],
+    otherInfo: ['AI-augmented workflow'],
   },
   {
     title: 'PAO Fashionz',
