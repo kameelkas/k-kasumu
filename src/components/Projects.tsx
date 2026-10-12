@@ -30,7 +30,7 @@ export default function Projects({ projects }: ProjectProps) {
             projects.length % 2 === 1 && index === projects.length - 1;
           return (
             <MotionWrapper
-              key={project.title}
+              key={`${project.title}-${index}`}
               delay={(index % 2) * 0.1}
               className={wide ? 'h-full lg:col-span-2' : 'h-full'}
             >
