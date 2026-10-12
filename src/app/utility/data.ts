@@ -157,27 +157,4 @@ export const projectData: ProjectItem[] = [
     ],
     otherInfo: [],
   },
-  {
-    title: 'PAO Fashionz',
-    description:
-      'Collaborated in a team to create a branded and dynamic online storefront featuring storytelling, a gallery, and seamless shopping experiences.',
-    image: PAOFashionzImage,
-    links: [
-      {
-        type: LinkType.VISIT,
-        url: 'https://paofashionz.ca',
-      },
-    ],
-    techStack: [
-      'Next.js',
-      'Typescript',
-      'Tailwind CSS',
-      'Shopify Storefront API',
-      'Vercel',
-      'Sanity CMS',
-      'GraphQL',
-      'GROQ',
-    ],
-    otherInfo: [],
-  },
 ];
