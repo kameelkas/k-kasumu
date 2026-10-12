@@ -99,6 +99,28 @@ export const projectData: ProjectItem[] = [
     otherInfo: ['Entrepreneurship / startup'],
   },
   {
+    title: 'LifeLens',
+    description:
+      'Co-developed LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes.',
+    image: LifeLensLogoBg,
+    links: [
+      {
+        type: LinkType.DEMO,
+        url: 'https://youtu.be/Mz_NLebq0Gs',
+      },
+      {
+        type: LinkType.EXPLANATIVE,
+        url: '/LifeLensPoster.pdf',
+      },
+      {
+        type: LinkType.GITHUB,
+        url: 'https://github.com/uofc-ai2lab/LifeLens',
+      },
+    ],
+    techStack: ['Python', 'MQTT', 'NoSQL', 'NLP', 'Computer Vision'],
+    otherInfo: ['Entrepreneurship / startup'],
+  },
+  {
     title: 'LifeLens Web Portal',
     description:
       'Developed a simple web application to showcase how patient data may be visualized and interacted with using the data collected from the LifeLens paramedic device. It includes an interactive body map and timeline to showcase identified injuries and timestamped medications and interventions collected. There is also a secure AHS portal to view patient images.',
@@ -111,6 +133,29 @@ export const projectData: ProjectItem[] = [
     ],
     techStack: ['React', 'JavaScript', 'Tailwind CSS', 'Vercel'],
     otherInfo: ['AI-augmented workflow'],
+  },
+  {
+    title: 'PAO Fashionz',
+    description:
+      'Collaborated in a team to create a branded and dynamic online storefront featuring storytelling, a gallery, and seamless shopping experiences.',
+    image: PAOFashionzImage,
+    links: [
+      {
+        type: LinkType.VISIT,
+        url: 'https://paofashionz.ca',
+      },
+    ],
+    techStack: [
+      'Next.js',
+      'Typescript',
+      'Tailwind CSS',
+      'Shopify Storefront API',
+      'Vercel',
+      'Sanity CMS',
+      'GraphQL',
+      'GROQ',
+    ],
+    otherInfo: [],
   },
   {
     title: 'PAO Fashionz',
