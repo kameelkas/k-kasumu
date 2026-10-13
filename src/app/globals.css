@@ -1,3 +1,62 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --page-background: #f4f6fb;
+  --page-texture: rgb(154 170 222 / 0.4);
+}
+
+html {
+  background-color: var(--page-background);
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 88% 2%, var(--page-texture), transparent 34rem),
+    linear-gradient(
+      145deg,
+      #e6e5f0 0%,
+      var(--page-background) 48%,
+      #e9edfa 100%
+    );
+  color: #1f2430;
+}
+
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background: #090b10;
+    --page-texture: rgb(90 109 192 / 0.22);
+  }
+
+  body {
+    background:
+      radial-gradient(
+        ellipse at 88% 2%,
+        var(--page-texture),
+        transparent 34rem
+      ),
+      linear-gradient(
+        145deg,
+        #1a1f2e 0%,
+        var(--page-background) 48%,
+        #10141c 100%
+      );
+    color: #eaeefb;
+  }
+
+  .bg-grain {
+    opacity: 0.08;
+    mix-blend-mode: screen;
+  }
+}
