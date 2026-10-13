@@ -1,26 +1,36 @@
 import Image from 'next/image';
 import HeroSectionImage from '@/images/dark-KK.jpeg';
-import { SiGithub } from 'react-icons/si';
-import { FaLinkedin } from "react-icons/fa";
-import { IoIosPaper } from 'react-icons/io';
-import { MdEmail } from 'react-icons/md';
+import { FiFileText, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import MotionWrapper from './MotionWrapper';
+
+const heroLinkClass =
+  'rounded-lg p-2 transition-all duration-100 ease-in-out interactive:scale-110 interactive:bg-surface-light/50 interactive:text-accentHover-light dark:interactive:bg-surface-dark/70 dark:interactive:text-accentHover-dark';
+
 export default function Hero() {
   const heroLinks = [
     {
       name: 'GitHub',
       url: 'https://github.com/kameelkas',
-      icon: <SiGithub size={36} />,
+      external: true,
+      icon: FiGithub,
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/ka-kasumu/',
-      icon: <FaLinkedin size={36} />,
+      external: true,
+      icon: FiLinkedin,
     },
     {
       name: 'Resume',
       url: '/Kameel Kasumu Resume (Full).pdf',
-      icon: <IoIosPaper size={36} />,
+      external: true,
+      icon: FiFileText,
+    },
+    {
+      name: 'Email',
+      url: '#contact',
+      external: false,
+      icon: FiMail,
     },
   ];
 
@@ -43,23 +53,22 @@ export default function Hero() {
             <h1 className="text-6xl font-bold sm:text-8xl">Kameel!</h1>
             <h1 className="text-xl sm:text-2xl">Emerging Software Engineer</h1>
             <div className="mt-3 flex items-center justify-between space-x-6">
-              {heroLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
-                >
-                  {link.icon}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                className="transform duration-300 ease-in-out interactive:scale-125 interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
-              >
-                <MdEmail size={36} />
-              </a>
+              {heroLinks.map((link) => {
+                const Icon = link.icon;
+                return (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    aria-label={link.name}
+                    {...(link.external
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    className={heroLinkClass}
+                  >
+                    <Icon size={34} aria-hidden="true" />
+                  </a>
+                );
+              })}
             </div>
           </MotionWrapper>
         </MotionWrapper>
