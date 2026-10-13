@@ -25,7 +25,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Kameel Kasumu" />
       </Head>
       <body className="min-h-screen p-4">
-        <div className="relative isolate">
+        <div className="relative">
           <div aria-hidden className="bg-grain" />
           <div className="relative z-10">{children}</div>
         </div>
