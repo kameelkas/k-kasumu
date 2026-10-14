@@ -12,10 +12,10 @@ type MotionWrapperProps<T extends ElementType = 'div'> = {
 export default function MotionWrapper<T extends ElementType = 'div'>({
   children,
   direction = 'up',
-  as,
+  as = 'div',
   ...rest
 }: MotionWrapperProps<T>) {
-  const MotionComponent = motion.create(as || 'div');
+  const MotionComponent = motion[as as 'div'];
 
   const variants = {
     hidden:
