@@ -34,8 +34,7 @@ export default function Contact() {
           className={contactLinkClass}
         >
           GitHub
-        </a>
-        . I&apos;m always excited to connect and chat!
+        </a>.
       </MotionWrapper>
     </div>
   );
