@@ -38,7 +38,7 @@ export default function MotionWrapper<T extends ElementType = 'div'>({
       variants={variants}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false }}
+      viewport={{ once: true }}
       transition={{ duration: 0.5, ease: 'easeIn' }}
       {...rest}
     >
