@@ -78,10 +78,14 @@ export const skillsData: SkillsData = {
     'Git',
     'GitHub',
     'Azure DevOps',
+    'Jira',
     'WinAppDriver',
     'Vercel',
     'Sanity CMS',
     'Shopify Storefront API',
+    'Cursor',
+    'Visual Studio',
+    'Visual Studio Code',
   ],
   alsoWorkedWith: ['SQL', 'AWS', 'Shell'],
 };
@@ -171,7 +175,12 @@ export const projectData: ProjectItem[] = [
       'Course final project (team of 4): fine-tuned an EfficientNet-B0 to classify brain MRI scans into 4 classes, reaching 94.3% test accuracy. I built the data pipeline and model setup, and compared EfficientNet variants under Colab GPU limits.',
     image: BrainTumourImage,
     imageFit: 'contain',
-    links: [],
+    links: [
+      {
+        type: LinkType.SOURCE,
+        url: 'https://github.com/kameelkas/ensf519-final-project_brain-tumour-classification'
+      },
+    ],
     tags: [
       { label: 'Python', category: 'tech' },
       { label: 'PyTorch', category: 'tech' },
