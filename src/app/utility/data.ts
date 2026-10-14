@@ -2,7 +2,6 @@ import SeequentLogo from '@/images/seequent.png';
 import PAOFashionzImage from '@/images/paofashionz.png';
 import LifeLensWebPortalImage from '@/images/lifelens-portal.png';
 import LifeLensLogoBg from '@/images/LifeLens-bg.png';
-import UnityImage from '@/images/unity.png';
 import { StaticImageData } from 'next/image';
 
 export type ExperienceCategory = 'career' | 'projectsAndActivities';
@@ -24,7 +23,23 @@ export const experienceData: ExperienceItem[] = [
     duration: 'May 2024 - August 2025',
     category: 'career',
     description:
-      'I completed a 16-month internship at Seequent, where I implemented and refactored key UI features for GeoStudio, including the “Project Settings” interface for its market leading slope stability module. I also served as Scrum Master, led agile improvements, maintained build pipeline health, and mentored a new intern, all while strengthening team collaboration and product reliability.',
+      'I completed a 16-month internship at Seequent, where I owned UI redesigns and new-feature work for GeoStudio (C++, MFC), including the “Project Settings” interface for its market leading slope stability module. I also built and maintained automated UI tests (C#, WinAppDriver), triaged CI/CD failures in Azure DevOps, served as Scrum Master for 13 weeks, and onboarded a new intern.',
+  },
+  {
+    position: 'Khateebs Director',
+    company: "Muslim Students' Association",
+    duration: 'Oct 2025 – Aug 2026',
+    category: 'projectsAndActivities',
+    description:
+      'Coordinated weekly Jummah prayers; recruited and trained future Khateebs.',
+  },
+  {
+    position: 'Vice President Internal',
+    company: 'Tech Start UCalgary',
+    duration: 'Jul 2025 – May 2026',
+    category: 'projectsAndActivities',
+    description:
+      'Oversaw operations for a 70+ member student software organization; led recruitment, onboarding and executive transition planning.',
   },
 ];
 
