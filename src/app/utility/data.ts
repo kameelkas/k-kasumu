@@ -26,23 +26,6 @@ export const experienceData: ExperienceItem[] = [
     description:
       'I completed a 16-month internship at Seequent, where I implemented and refactored key UI features for GeoStudio, including the “Project Settings” interface for its market leading slope stability module. I also served as Scrum Master, led agile improvements, maintained build pipeline health, and mentored a new intern, all while strengthening team collaboration and product reliability.',
   },
-  // Placeholder entries for the Projects/Activities tab. Replace these.
-  {
-    position: 'Capstone Team Member',
-    company: 'University of Calgary',
-    duration: 'Sep 2024 - Apr 2025',
-    category: 'projectsAndActivities',
-    description:
-      'Worked with a small team to take a software capstone from the problem statement to a working demo, covering design, implementation, and the final presentation.',
-  },
-  {
-    position: 'Programming Lead',
-    company: 'Engineering Club',
-    duration: 'Sep 2023 - Apr 2024',
-    category: 'projectsAndActivities',
-    description:
-      'Led the club’s programming group, ran weekly build sessions, and shipped small tools used at club events.',
-  },
 ];
 
 export interface SkillsData {
