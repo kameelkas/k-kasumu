@@ -51,7 +51,10 @@ export default function Hero() {
           <MotionWrapper className="text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl">Hey, I&apos;m</h1>
             <h1 className="text-6xl font-bold sm:text-8xl">Kameel!</h1>
-            <h1 className="text-xl sm:text-2xl">Emerging Software Engineer</h1>
+            <h1 className="text-xl sm:text-2xl">Software Engineer</h1>
+            <p className="mt-2 text-sm text-secondary-light sm:text-base dark:text-secondary-dark">
+              New grad · C++ · TypeScript · Python · Calgary, AB
+            </p>
             <div className="mt-3 flex items-center justify-between space-x-6">
               {heroLinks.map((link) => {
                 const Icon = link.icon;
