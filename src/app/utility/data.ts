@@ -46,32 +46,39 @@ export const experienceData: ExperienceItem[] = [
 export interface SkillsData {
   languages: string[];
   frameworks: string[];
-  toolsAndPlatforms: string[];
+  tools: string[];
+  alsoWorkedWith: string[];
 }
 
 export const skillsData: SkillsData = {
   languages: [
     'C++',
     'C',
-    'Java',
     'Python',
-    'HTML',
-    'CSS',
     'TypeScript',
     'JavaScript',
+    'Java',
     'C#',
-    'SQL',
+    'HTML/CSS',
   ],
-  frameworks: ['Next.js', 'React', 'Tailwind CSS', 'MFCShell', 'WinAppDriver'],
-  toolsAndPlatforms: [
+  frameworks: [
+    'React',
+    'Next.js',
+    'Tailwind CSS',
+    'MFC',
+    'PyTorch',
+    'spaCy',
+  ],
+  tools: [
     'Git',
-    'Github',
-    'Microsoft ADO',
-    'AWS',
+    'GitHub',
+    'Azure DevOps',
+    'WinAppDriver',
     'Vercel',
     'Sanity CMS',
     'Shopify Storefront API',
   ],
+  alsoWorkedWith: ['SQL', 'AWS', 'Shell'],
 };
 
 export enum LinkType {

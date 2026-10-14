@@ -5,6 +5,13 @@ export interface SkillsProps {
   skills: SkillsData;
 }
 
+const groups: { label: string; key: keyof SkillsData }[] = [
+  { label: 'Languages', key: 'languages' },
+  { label: 'Frameworks & Libraries', key: 'frameworks' },
+  { label: 'Tools', key: 'tools' },
+  { label: 'Also worked with', key: 'alsoWorkedWith' },
+];
+
 export default function Skills({ skills }: SkillsProps) {
   return (
     <div>
@@ -14,33 +21,24 @@ export default function Skills({ skills }: SkillsProps) {
       >
         Skills
       </MotionWrapper>
-      <div className="flex flex-wrap justify-center gap-4 text-center">
-        {skills.languages.map((language, index) => (
-          <MotionWrapper
-            as="span"
-            key={index}
-            className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
-          >
-            {language}
-          </MotionWrapper>
-        ))}
-        {skills.frameworks.map((framework, index) => (
-          <MotionWrapper
-            as="span"
-            key={index}
-            className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
-          >
-            {framework}
-          </MotionWrapper>
-        ))}
-        {skills.toolsAndPlatforms.map((tool, index) => (
-          <MotionWrapper
-            as="span"
-            key={index}
-            className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
-          >
-            {tool}
-          </MotionWrapper>
+      <div className="flex flex-col gap-8">
+        {groups.map((group) => (
+          <div key={group.label} className="text-center">
+            <h2 className="mb-4 text-lg text-secondary-light dark:text-secondary-dark">
+              {group.label}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {skills[group.key].map((item) => (
+                <MotionWrapper
+                  as="span"
+                  key={item}
+                  className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
+                >
+                  {item}
+                </MotionWrapper>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>
