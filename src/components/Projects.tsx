@@ -6,6 +6,7 @@ import { PiMonitorPlayLight } from "react-icons/pi";
 import { GoFileCode } from "react-icons/go";
 import { IoReaderOutline } from 'react-icons/io5';
 import MotionWrapper from './MotionWrapper';
+import SectionHeading from './SectionHeading';
 import { LinkType } from '@/app/utility/data';
 import { JSX } from 'react';
 
@@ -25,12 +26,7 @@ export default function Projects({ projects }: ProjectProps) {
 
   return (
     <div>
-      <MotionWrapper
-        as="h1"
-        className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark"
-      >
-        Projects
-      </MotionWrapper>
+      <SectionHeading>Projects</SectionHeading>
       <MotionWrapper as="p" className="mx-10 mb-10 text-center">
         Here is a select list of projects I&#39;ve worked on. Feel free to
         explore more of my work on my{' '}
@@ -53,13 +49,23 @@ export default function Projects({ projects }: ProjectProps) {
             className="flex w-full flex-col rounded-lg bg-surface-light shadow-lg dark:bg-surface-dark"
           >
             {project.image && (
-              <div className="relative w-full">
+              <div
+                className={
+                  project.imageFit === 'contain'
+                    ? 'flex justify-center px-6 pt-6'
+                    : 'relative w-full'
+                }
+              >
                 <Image
                   src={project.image}
                   alt={`A screenshot of the ${project.title} project`}
                   width={1600}
                   height={900}
-                  className="h-32 rounded-t-lg object-cover sm:h-64 lg:h-80"
+                  className={
+                    project.imageFit === 'contain'
+                      ? 'aspect-square h-48 w-auto rounded-lg object-contain sm:h-56 lg:h-64'
+                      : 'h-32 w-full rounded-t-lg object-cover sm:h-64 lg:h-80'
+                  }
                   priority
                 />
               </div>

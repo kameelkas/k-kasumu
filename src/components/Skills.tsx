@@ -1,5 +1,6 @@
 import { SkillsData } from '@/app/utility/data';
 import MotionWrapper from './MotionWrapper';
+import SectionHeading from './SectionHeading';
 
 export interface SkillsProps {
   skills: SkillsData;
@@ -15,24 +16,22 @@ const groups: { label: string; key: keyof SkillsData }[] = [
 export default function Skills({ skills }: SkillsProps) {
   return (
     <div>
-      <MotionWrapper
-        as="h1"
-        className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark"
-      >
-        Skills
-      </MotionWrapper>
-      <div className="flex flex-col gap-8">
+      <SectionHeading>Skills</SectionHeading>
+      <div className="divide-y divide-secondary-light/25 dark:divide-secondary-dark/25">
         {groups.map((group) => (
-          <div key={group.label} className="text-center">
-            <h2 className="mb-4 text-lg text-secondary-light dark:text-secondary-dark">
+          <div
+            key={group.label}
+            className="flex flex-col gap-3 py-6 sm:flex-row sm:items-start sm:gap-8"
+          >
+            <h3 className="w-full shrink-0 text-sm font-normal text-secondary-light sm:w-52 sm:pt-2.5 sm:text-base dark:text-secondary-dark">
               {group.label}
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
+            </h3>
+            <div className="flex flex-wrap gap-3">
               {skills[group.key].map((item) => (
                 <MotionWrapper
                   as="span"
                   key={item}
-                  className="w-fit rounded-lg bg-surface-light px-6 py-2 dark:bg-surface-dark"
+                  className="w-fit rounded-lg border border-secondary-light/25 bg-surface-light px-5 py-2 text-base font-medium transition-colors duration-300 ease-in-out interactive:border-accent-light interactive:text-accentHover-light sm:text-lg dark:border-secondary-dark/30 dark:bg-surface-dark dark:interactive:border-accent-dark dark:interactive:text-accentHover-dark cursor-default"
                 >
                   {item}
                 </MotionWrapper>

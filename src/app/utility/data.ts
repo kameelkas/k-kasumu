@@ -1,7 +1,10 @@
 import SeequentLogo from '@/images/seequent.png';
-import PAOFashionzImage from '@/images/paofashionz.png';
+import MsaLogo from '@/images/msa.png';
+import TechStartLogo from '@/images/tech-start.png';
+import PAOFashionzImage from '@/images/pao-fashionz.png';
 import LifeLensWebPortalImage from '@/images/lifelens-portal.png';
-import LifeLensLogoBg from '@/images/LifeLens-bg.png';
+import LifeLensLogoBg from '@/images/lifelens.png';
+import BrainTumourImage from '@/images/brain-tumour.png';
 import { StaticImageData } from 'next/image';
 
 export type ExperienceCategory = 'career' | 'projectsAndActivities';
@@ -28,6 +31,7 @@ export const experienceData: ExperienceItem[] = [
   {
     position: 'Khateebs Director',
     company: "Muslim Students' Association",
+    logo: MsaLogo,
     duration: 'Oct 2025 – Aug 2026',
     category: 'projectsAndActivities',
     description:
@@ -36,6 +40,7 @@ export const experienceData: ExperienceItem[] = [
   {
     position: 'Vice President Internal',
     company: 'Tech Start UCalgary',
+    logo: TechStartLogo,
     duration: 'Jul 2025 – May 2026',
     category: 'projectsAndActivities',
     description:
@@ -104,6 +109,7 @@ export interface ProjectItem {
   title: string;
   description: string;
   image?: StaticImageData;
+  imageFit?: 'cover' | 'contain';
   links: LinkObject[];
   tags: ProjectTag[];
 }
@@ -163,6 +169,8 @@ export const projectData: ProjectItem[] = [
     title: 'Brain Tumour MRI Classification',
     description:
       'Course final project (team of 4): fine-tuned an EfficientNet-B0 to classify brain MRI scans into 4 classes, reaching 94.3% test accuracy. I built the data pipeline and model setup, and compared EfficientNet variants under Colab GPU limits.',
+    image: BrainTumourImage,
+    imageFit: 'contain',
     links: [],
     tags: [
       { label: 'Python', category: 'tech' },

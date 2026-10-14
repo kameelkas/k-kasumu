@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import HeroSectionImage from '@/images/dark-KK.jpeg';
+import HeroSectionImage from '@/images/dark-kk.jpeg';
 import { FiFileText, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 import MotionWrapper from './MotionWrapper';
 
@@ -49,12 +49,21 @@ export default function Hero() {
         </MotionWrapper>
         <MotionWrapper direction="left">
           <MotionWrapper className="text-center md:text-left">
-            <h1 className="text-4xl sm:text-5xl">Hey, I&apos;m</h1>
+            <p className="text-4xl sm:text-5xl">Hey, I&apos;m</p>
             <h1 className="text-6xl font-bold sm:text-8xl">Kameel!</h1>
-            <h1 className="text-xl sm:text-2xl">Software Engineer</h1>
-            <p className="mt-2 text-sm text-secondary-light sm:text-base dark:text-secondary-dark">
-              New grad · C++ · TypeScript · Python · Calgary, AB
-            </p>
+            <p className="text-xl sm:text-2xl lg:text-3xl">Software Engineer</p>
+            <ul className="mt-3 flex flex-wrap justify-center gap-2 md:justify-start">
+              {['New grad', 'C++', 'TypeScript', 'Python', 'Calgary, AB'].map(
+                (item) => (
+                  <li
+                    key={item}
+                    className="cursor-default rounded-full border border-secondary-light/25 bg-surface-light px-3 py-1 text-xs text-secondary-light transition-colors duration-300 ease-in-out interactive:border-accent-light interactive:text-accentHover-light sm:text-sm dark:border-secondary-dark/30 dark:bg-surface-dark dark:text-secondary-dark dark:interactive:border-accent-dark dark:interactive:text-accentHover-dark"
+                  >
+                    {item}
+                  </li>
+                ),
+              )}
+            </ul>
             <div className="mt-3 flex items-center justify-between space-x-6">
               {heroLinks.map((link) => {
                 const Icon = link.icon;

@@ -1,4 +1,5 @@
 import MotionWrapper from './MotionWrapper';
+import SectionHeading from './SectionHeading';
 
 const contactLinkClass =
   'underline transition-colors duration-150 ease-out interactive:text-accentHover-light dark:interactive:text-accentHover-dark';
@@ -6,12 +7,7 @@ const contactLinkClass =
 export default function Contact() {
   return (
     <div>
-      <MotionWrapper
-        as="h1"
-        className="mb-8 text-center text-4xl underline decoration-secondary-light decoration-2 underline-offset-4 sm:text-5xl dark:decoration-secondary-dark"
-      >
-        Contact
-      </MotionWrapper>
+      <SectionHeading>Contact</SectionHeading>
       <MotionWrapper as="p" className="mx-10 text-center">
         Curious about my work or have something in mind? Send me an email at{' '}
         <a href="mailto:kameelkas@gmail.com" className={contactLinkClass}>

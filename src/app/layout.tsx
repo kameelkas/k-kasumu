@@ -1,22 +1,33 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import Head from 'next/head';
 import { Analytics } from '@vercel/analytics/next';
 
-const inter = Inter({
-  variable: '--font-inter',
+const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
+  display: 'swap',
 });
 
+const title = 'Kameel Kasumu | Software Engineer (C++, TypeScript, Python)';
+const description =
+  'New-grad software engineer from the University of Calgary. Portfolio of projects.';
+
 export const metadata: Metadata = {
-  title: 'Kameel Kasumu | Software Engineer (C++, TypeScript, Python)',
-  description:
-    'New-grad software engineer from the University of Calgary. Portfolio of projects.',
+  metadataBase: new URL('https://kkasumu.vercel.app'),
+  title,
+  description,
   openGraph: {
-    title: 'Kameel Kasumu | Software Engineer (C++, TypeScript, Python)',
-    description:
-      'New-grad software engineer from the University of Calgary. Portfolio of projects.',
+    title,
+    description,
+    url: '/',
+    siteName: 'Kameel Kasumu',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
   },
 };
 
@@ -26,11 +37,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} scroll-smooth`}>
+    <html lang="en" className="scroll-smooth">
       <Head>
         <meta name="apple-mobile-web-app-title" content="Kameel Kasumu" />
       </Head>
-      <body className="min-h-screen p-4">
+      <body className={`${sans.className} min-h-screen p-4`}>
         <div className="relative">
           <div aria-hidden className="bg-grain" />
           <div className="relative z-10">{children}</div>

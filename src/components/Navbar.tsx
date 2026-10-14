@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import NavbarLogo from '@/images/light-KK.jpeg';
+import NavbarLogo from '@/images/light-kk.jpeg';
 
 const sections = ['about', 'experience', 'skills', 'projects', 'contact'];
 
