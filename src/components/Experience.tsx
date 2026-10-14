@@ -29,7 +29,7 @@ export default function Experience({ experiences }: ExperienceProps) {
       <div
         role="tablist"
         aria-label="Experience"
-        className="mx-auto mb-8 flex w-fit rounded-full bg-accent-light/25 p-1 dark:bg-accent-dark/25"
+        className="mx-auto mb-8 flex w-fit rounded-full bg-surface-light/80 p-1 dark:bg-surface-dark/80"
       >
         {tabs.map((tab) => {
           const selected = active === tab.id;

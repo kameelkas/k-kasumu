@@ -77,10 +77,10 @@ export const skillsData: SkillsData = {
 };
 
 export enum LinkType {
-  VISIT = 'Visit',
-  GITHUB = 'Code',
-  DEMO = 'Demo',
-  EXPLANATIVE = 'Explanative',
+  VISIT = 'Visit Site',
+  SOURCE = 'Source',
+  WATCH = 'Watch Demo',
+  READ = 'Read Brief',
 }
 
 export interface LinkObject {
@@ -88,13 +88,19 @@ export interface LinkObject {
   url: string;
 }
 
+export type ProjectTagCategory = 'tech' | 'other';
+
+export interface ProjectTag {
+  label: string;
+  category: ProjectTagCategory;
+}
+
 export interface ProjectItem {
   title: string;
   description: string;
   image: StaticImageData;
   links: LinkObject[];
-  techStack: string[];
-  otherInfo: string[];
+  tags: ProjectTag[];
 }
 
 export const projectData: ProjectItem[] = [
@@ -105,20 +111,26 @@ export const projectData: ProjectItem[] = [
     image: LifeLensLogoBg,
     links: [
       {
-        type: LinkType.DEMO,
+        type: LinkType.WATCH,
         url: 'https://youtu.be/Mz_NLebq0Gs',
       },
       {
-        type: LinkType.EXPLANATIVE,
+        type: LinkType.READ,
         url: '/LifeLensPoster.pdf',
       },
       {
-        type: LinkType.GITHUB,
+        type: LinkType.SOURCE,
         url: 'https://github.com/uofc-ai2lab/LifeLens',
       },
     ],
-    techStack: ['Python', 'MQTT', 'NoSQL', 'NLP', 'Computer Vision'],
-    otherInfo: ['Entrepeneurship/Startup'],
+    tags: [
+      { label: 'Python', category: 'tech' },
+      { label: 'MQTT', category: 'tech' },
+      { label: 'NoSQL', category: 'tech' },
+      { label: 'NLP', category: 'tech' },
+      { label: 'Computer Vision', category: 'tech' },
+      { label: 'Entrepeneurship/Startup', category: 'other' },
+    ],
   },
   {
     title: 'LifeLens Web Portal',
@@ -127,12 +139,17 @@ export const projectData: ProjectItem[] = [
     image: LifeLensWebPortalImage,
     links: [
       {
-        type: LinkType.DEMO,
+        type: LinkType.WATCH,
         url: 'https://youtu.be/wVYDB7JFGXY',
       },
     ],
-    techStack: ['React', 'JavaScript', 'Tailwind CSS', 'Vercel'],
-    otherInfo: ['AI-Augmented Workflow'],
+    tags: [
+      { label: 'React', category: 'tech' },
+      { label: 'JavaScript', category: 'tech' },
+      { label: 'Tailwind CSS', category: 'tech' },
+      { label: 'Vercel', category: 'tech' },
+      { label: 'AI-Augmented Workflow', category: 'other' },
+    ],
   },
   {
     title: 'PAO Fashionz',
@@ -145,16 +162,15 @@ export const projectData: ProjectItem[] = [
         url: 'https://paofashionz.ca',
       },
     ],
-    techStack: [
-      'Next.js',
-      'Typescript',
-      'Tailwind CSS',
-      'Shopify Storefront API',
-      'Vercel',
-      'Sanity CMS',
-      'GraphQL',
-      'GROQ',
+    tags: [
+      { label: 'Next.js', category: 'tech' },
+      { label: 'Typescript', category: 'tech' },
+      { label: 'Tailwind CSS', category: 'tech' },
+      { label: 'Shopify Storefront API', category: 'tech' },
+      { label: 'Vercel', category: 'tech' },
+      { label: 'Sanity CMS', category: 'tech' },
+      { label: 'GraphQL', category: 'tech' },
+      { label: 'GROQ', category: 'tech' },
     ],
-    otherInfo: [],
   },
 ];

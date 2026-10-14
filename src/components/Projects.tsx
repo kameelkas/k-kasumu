@@ -1,7 +1,9 @@
 import { ProjectItem } from '@/app/utility/data';
 import Image from 'next/image';
-import { LuExternalLink, LuVideo } from 'react-icons/lu';
-import { FiGithub } from 'react-icons/fi';
+import { LuExternalLink } from 'react-icons/lu';
+import { PiMonitorPlayLight } from "react-icons/pi";
+
+import { GoFileCode } from "react-icons/go";
 import { IoReaderOutline } from 'react-icons/io5';
 import MotionWrapper from './MotionWrapper';
 import { LinkType } from '@/app/utility/data';
@@ -16,9 +18,9 @@ export default function Projects({ projects }: ProjectProps) {
     'transition-all duration-300 ease-in-out group-hover:scale-125 interactive:scale-125';
   const linkIcons: Record<LinkType, JSX.Element> = {
     [LinkType.VISIT]: <LuExternalLink className={linkIconStyles} />,
-    [LinkType.GITHUB]: <FiGithub className={linkIconStyles} />,
-    [LinkType.DEMO]: <LuVideo className={linkIconStyles} />,
-    [LinkType.EXPLANATIVE]: <IoReaderOutline className={linkIconStyles} />,
+    [LinkType.SOURCE]: <GoFileCode className={linkIconStyles} />,
+    [LinkType.WATCH]: <PiMonitorPlayLight className={linkIconStyles} />,
+    [LinkType.READ]: <IoReaderOutline className={linkIconStyles} />,
   };
 
   return (
@@ -64,20 +66,16 @@ export default function Projects({ projects }: ProjectProps) {
             <div className="p-2 font-semibold">{project.title}</div>
             <div className="p-2 text-sm sm:text-lg">{project.description}</div>
             <div className="mb-4 flex flex-wrap gap-2 px-2">
-              {project.techStack.map((tech, index) => (
+              {project.tags.map((tag) => (
                 <span
-                  key={index}
-                  className="rounded-full bg-accent-light px-3 py-1 text-xs font-semibold sm:text-sm dark:bg-accent-dark"
+                  key={tag.label}
+                  className={`rounded-full px-3 py-1 text-xs font-normal sm:text-sm ${
+                    tag.category === 'tech'
+                      ? 'bg-accent-light dark:bg-accent-dark'
+                      : 'bg-accent-light/20 dark:bg-accent-dark/20'
+                  }`}
                 >
-                  {tech}
-                </span>
-              ))}
-              {project.otherInfo.map((other, index) => (
-                <span
-                  key={index}
-                  className="rounded-full bg-accent-light/20 px-3 py-1 text-xs font-semibold sm:text-sm dark:bg-accent-dark/20"
-                >
-                  {other}
+                  {tag.label}
                 </span>
               ))}
             </div>
@@ -90,7 +88,7 @@ export default function Projects({ projects }: ProjectProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md bg-accent-light px-2 py-1 transition-all duration-300 ease-in-out interactive:bg-accentHover-light dark:bg-accent-dark interactive:dark:bg-accentHover-dark"
+                  className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md border border-transparent bg-surface-dark/5 px-2 py-1 transition-colors duration-300 ease-in-out interactive:border-accent-light interactive:text-accentHover-light dark:bg-surface-light/5 dark:interactive:border-accent-dark dark:interactive:text-accentHover-dark"
                 >
                   <span>{link.type}</span>
                   {linkIcons[link.type]}
