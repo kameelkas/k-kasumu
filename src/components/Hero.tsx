@@ -22,7 +22,7 @@ export default function Hero() {
     },
     {
       name: 'Resume',
-      url: '/Kameel Kasumu Resume (Full).pdf',
+      url: '/Kameel_Kasumu_Resume.pdf',
       external: true,
       icon: FiFileText,
     },
