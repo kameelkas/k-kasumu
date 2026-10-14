@@ -10,8 +10,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Kameel Kasumu',
-  description: "Kameel Kasumu's Personal Portfolio",
+  title: 'Kameel Kasumu | Software Engineer (C++, TypeScript, Python)',
+  description:
+    'New-grad software engineer from the University of Calgary. Portfolio of projects.',
+  openGraph: {
+    title: 'Kameel Kasumu | Software Engineer (C++, TypeScript, Python)',
+    description:
+      'New-grad software engineer from the University of Calgary. Portfolio of projects.',
+  },
 };
 
 export default function RootLayout({
