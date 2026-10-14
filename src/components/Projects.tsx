@@ -40,7 +40,7 @@ export default function Projects({ projects }: ProjectProps) {
           rel="noopener noreferrer"
           className="underline transition-colors duration-300 ease-in-out interactive:text-accentHover-light dark:interactive:text-accentHover-dark"
         >
-          Github
+          GitHub
         </a>
         .
       </MotionWrapper>
@@ -52,16 +52,18 @@ export default function Projects({ projects }: ProjectProps) {
             key={index}
             className="flex w-full flex-col rounded-lg bg-surface-light shadow-lg dark:bg-surface-dark"
           >
-            <div className="relative w-full">
-              <Image
-                src={project.image}
-                alt={`A screenshot of the ${project.title} project`}
-                width={1600}
-                height={900}
-                className="h-32 rounded-t-lg object-cover sm:h-64 lg:h-80"
-                priority
-              />
-            </div>
+            {project.image && (
+              <div className="relative w-full">
+                <Image
+                  src={project.image}
+                  alt={`A screenshot of the ${project.title} project`}
+                  width={1600}
+                  height={900}
+                  className="h-32 rounded-t-lg object-cover sm:h-64 lg:h-80"
+                  priority
+                />
+              </div>
+            )}
 
             <div className="p-2 font-semibold">{project.title}</div>
             <div className="p-2 text-sm sm:text-lg">{project.description}</div>
@@ -81,20 +83,22 @@ export default function Projects({ projects }: ProjectProps) {
             </div>
             <div className="flex-1"></div>
 
-            <div className="mx-3 mb-3 flex flex-col gap-2 sm:flex-row">
-              {project.links.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md border border-transparent bg-surface-dark/5 px-2 py-1 transition-colors duration-300 ease-in-out interactive:border-accent-light interactive:text-accentHover-light dark:bg-surface-light/5 dark:interactive:border-accent-dark dark:interactive:text-accentHover-dark"
-                >
-                  <span>{link.type}</span>
-                  {linkIcons[link.type]}
-                </a>
-              ))}
-            </div>
+            {project.links.length > 0 && (
+              <div className="mx-3 mb-3 flex flex-col gap-2 sm:flex-row">
+                {project.links.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-1 flex-row items-center justify-center gap-2 rounded-md border border-transparent bg-surface-dark/5 px-2 py-1 transition-colors duration-300 ease-in-out interactive:border-accent-light interactive:text-accentHover-light dark:bg-surface-light/5 dark:interactive:border-accent-dark dark:interactive:text-accentHover-dark"
+                  >
+                    <span>{link.type}</span>
+                    {linkIcons[link.type]}
+                  </a>
+                ))}
+              </div>
+            )}
           </MotionWrapper>
         ))}
       </div>

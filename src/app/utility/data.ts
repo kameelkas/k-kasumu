@@ -103,7 +103,7 @@ export interface ProjectTag {
 export interface ProjectItem {
   title: string;
   description: string;
-  image: StaticImageData;
+  image?: StaticImageData;
   links: LinkObject[];
   tags: ProjectTag[];
 }
@@ -112,7 +112,7 @@ export const projectData: ProjectItem[] = [
   {
     title: 'LifeLens',
     description:
-      'Co-developed LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes.',
+      'Co-developed LifeLens, an AI-powered, body-worn emergency response system that captures and structures critical trauma care information in real time using audio, video, and NLP/computer vision models. The platform helps paramedics reduce manual documentation while providing hospitals with live updates on injuries, medications, and interventions to improve preparation and patient outcomes. My part: I built the pipeline that extracts drugs, dosages, and routes from transcripts, handled transcript and image anonymization, and owned testing for the audio side.',
     image: LifeLensLogoBg,
     links: [
       {
@@ -130,17 +130,20 @@ export const projectData: ProjectItem[] = [
     ],
     tags: [
       { label: 'Python', category: 'tech' },
+      { label: 'spaCy', category: 'tech' },
+      { label: 'NLP', category: 'tech' },
+      { label: 'Presidio', category: 'tech' },
+      { label: 'Fernet', category: 'tech' },
       { label: 'MQTT', category: 'tech' },
       { label: 'NoSQL', category: 'tech' },
-      { label: 'NLP', category: 'tech' },
       { label: 'Computer Vision', category: 'tech' },
-      { label: 'Entrepeneurship/Startup', category: 'other' },
+      { label: 'Entrepreneurship', category: 'other' },
     ],
   },
   {
     title: 'LifeLens Web Portal',
     description:
-      'Developed a simple web application to showcase how patient data may be visualized and interacted with using the data collected from the LifeLens paramedic device. Inlcudes interactive body map and timeline to showcase identified injuries and timestamped medications and interventions collected. There is also a secure AHS portal to view patient images.',
+      'Developed a simple web application to showcase how patient data may be visualized and interacted with using the data collected from the LifeLens paramedic device. Includes interactive body map and timeline to showcase identified injuries and timestamped medications and interventions collected. There is also a secure AHS portal to view patient images.',
     image: LifeLensWebPortalImage,
     links: [
       {
@@ -157,9 +160,21 @@ export const projectData: ProjectItem[] = [
     ],
   },
   {
+    title: 'Brain Tumour MRI Classification',
+    description:
+      'Course final project (team of 4): fine-tuned an EfficientNet-B0 to classify brain MRI scans into 4 classes, reaching 94.3% test accuracy. I built the data pipeline and model setup, and compared EfficientNet variants under Colab GPU limits.',
+    links: [],
+    tags: [
+      { label: 'Python', category: 'tech' },
+      { label: 'PyTorch', category: 'tech' },
+      { label: 'Transfer Learning', category: 'tech' },
+      { label: 'EfficientNet', category: 'tech' },
+    ],
+  },
+  {
     title: 'PAO Fashionz',
     description:
-      'Collaborated in a team to create a branded and dynamic online storefront featuring storytelling, a gallery, and seamless shopping experiences.',
+      'A brand site with a Shopify-powered product catalog and Sanity-managed events, built with a team of 3 for a small-business owner. Includes storytelling and gallery pages. Checkout is still in progress.',
     image: PAOFashionzImage,
     links: [
       {
@@ -169,7 +184,7 @@ export const projectData: ProjectItem[] = [
     ],
     tags: [
       { label: 'Next.js', category: 'tech' },
-      { label: 'Typescript', category: 'tech' },
+      { label: 'TypeScript', category: 'tech' },
       { label: 'Tailwind CSS', category: 'tech' },
       { label: 'Shopify Storefront API', category: 'tech' },
       { label: 'Vercel', category: 'tech' },
